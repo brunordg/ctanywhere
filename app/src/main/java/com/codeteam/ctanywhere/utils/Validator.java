@@ -1,4 +1,4 @@
-package com.neoenergia.ctanywhere.utils;
+package com.codeteam.ctanywhere.utils;
 
 /**
  * Created by Bruno Rodrigues e Rodrigues on 29/01/17.
