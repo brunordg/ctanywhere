@@ -1,5 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'maven'
+apply plugin: "com.jfrog.bintray"
 
 android {
     compileSdkVersion 24
@@ -44,4 +45,3 @@ dependencies {
     //Others
     compile 'com.google.code.gson:gson:2.8.0'
 }
-
