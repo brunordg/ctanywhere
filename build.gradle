@@ -17,9 +17,6 @@ buildscript {
 allprojects {
     repositories {
         jcenter()
-        maven {
-            url "http://vps1.codeteam.com.br:8081/repository/"
-        }
     }
 }
 

@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/CTAnywhere.iml" filepath="$PROJECT_DIR$/CTAnywhere.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ctanywhere.iml" filepath="$PROJECT_DIR$/ctanywhere.iml" />
       <module fileurl="file://$PROJECT_DIR$/ctanywhere.iml" filepath="$PROJECT_DIR$/ctanywhere.iml" />
     </modules>
   </component>
