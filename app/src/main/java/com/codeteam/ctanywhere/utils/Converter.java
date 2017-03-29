@@ -17,8 +17,6 @@ import static android.content.ContentValues.TAG;
 public class Converter {
     
     public static String toPhoneNumber(String phone, String ddd) {
-        String original = phone;
-    
         try {
             phone = PhoneNumberUtils.stripSeparators(phone);
             
