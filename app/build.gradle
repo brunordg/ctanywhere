@@ -44,4 +44,5 @@ dependencies {
 
     //Others
     compile 'com.google.code.gson:gson:2.8.0'
+    compile 'com.googlecode.libphonenumber:libphonenumber:8.4.0'
 }
