@@ -24,7 +24,7 @@ public class Pref {
     public static void write(String key, Object value, Context context) {
         SharedPreferences sharedPreferences = context.getSharedPreferences(context.getPackageName() + FILE, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
-
+    
         if (value instanceof Boolean) {
             editor.putBoolean(key, (Boolean) value);
         } else if (value instanceof Float) {
