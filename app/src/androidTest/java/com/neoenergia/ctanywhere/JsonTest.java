@@ -6,9 +6,8 @@ import android.support.test.filters.SmallTest;
 import android.support.test.runner.AndroidJUnit4;
 import android.util.Log;
 
-import com.codeteam.ctanywhere.utils.Json;
+import br.com.codeteam.ctanywhere.utils.Json;
 
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

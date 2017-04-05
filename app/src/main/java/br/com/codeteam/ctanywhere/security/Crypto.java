@@ -1,4 +1,4 @@
-package com.codeteam.ctanywhere.security;
+package br.com.codeteam.ctanywhere.security;
 
 import android.util.Base64;
 

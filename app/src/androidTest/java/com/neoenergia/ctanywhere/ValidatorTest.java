@@ -7,7 +7,7 @@ import android.support.test.InstrumentationRegistry;
 import android.support.test.filters.SmallTest;
 import android.support.test.runner.AndroidJUnit4;
 
-import com.codeteam.ctanywhere.utils.Converter;
+import br.com.codeteam.ctanywhere.utils.Converter;
 
 import org.junit.Before;
 import org.junit.Test;

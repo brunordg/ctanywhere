@@ -6,7 +6,7 @@ import android.support.test.InstrumentationRegistry;
 import android.support.test.runner.AndroidJUnit4;
 import android.util.Log;
 
-import com.codeteam.ctanywhere.preferences.Pref;
+import br.com.codeteam.ctanywhere.preferences.Pref;
 
 import org.junit.Before;
 import org.junit.Test;

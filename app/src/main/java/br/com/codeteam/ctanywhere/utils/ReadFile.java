@@ -1,4 +1,4 @@
-package com.codeteam.ctanywhere.utils;
+package br.com.codeteam.ctanywhere.utils;
 
 import android.content.Context;
 

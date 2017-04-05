@@ -1,4 +1,4 @@
-package com.codeteam.ctanywhere.preferences;
+package br.com.codeteam.ctanywhere.preferences;
 
 import android.content.Context;
 import android.content.SharedPreferences;

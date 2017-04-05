@@ -21,8 +21,8 @@ android {
 uploadArchives {
     repositories {
         mavenDeployer {
-            repository(url: "http://vps1.codeteam.com.br:8081/repository/maven-snapshots/"){
-                authentication(userName: "admin", password: "admin123")
+            repository(url: "https://oss.sonatype.org/content/repositories/snapshots/"){
+                authentication(userName: "bruno", password: "Adriana10!")
             }
 
             pom.groupId = GROUP
