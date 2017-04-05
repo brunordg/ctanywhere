@@ -1,4 +1,4 @@
-package com.neoenergia.ctanywhere.commons.context;
+package br.com.codeteam.ctanywhere.context;
 
 import android.app.Application;
 
