@@ -20,7 +20,7 @@ allprojects {
 
 ```
 dependencies {
-  compile 'com.github.User:Repo:Tag'
+	compile 'com.github.brunordg:ctanywhere:1.0.1-SNAPSHOT'
 }
 ```
 
