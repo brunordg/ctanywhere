@@ -2,7 +2,6 @@
 
 Para você usar a biblioteca é simples, logo vamos adicionar mais funcionalidades que vão aumentar a sua produtividade para desenvolvimento de aplicativos móveis
 
-## CTAnywhere - Code Team
 
 ### Para adicionar a biblioteca ao seu projeto é simples basta seguir os próximos passos
 
