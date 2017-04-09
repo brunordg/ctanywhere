@@ -2,11 +2,11 @@
 
 Para você usar a biblioteca é simples, logo vamos adicionar mais funcionalidades que vão aumentar a sua produtividade para desenvolvimento de aplicativos móveis
 
-### CTAnywhere - Code Team
+## CTAnywhere - Code Team
 
-## Para adicionar a biblioteca ao seu projeto é simples basta seguir os próximos passos
+### Para adicionar a biblioteca ao seu projeto é simples basta seguir os próximos passos
 
-### Adicione o código abaixo no seu root build.gradle para adicionar os repositórios do jitpack
+**Adicione o código abaixo no seu root build.gradle para adicionar os repositórios do jitpack**
 
 ```
 allprojects {
@@ -17,7 +17,7 @@ allprojects {
 }
 ```
 
-### Adicione a depêndencia
+**Adicione a depêndencia**
 
 ```
 dependencies {
