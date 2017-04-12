@@ -71,7 +71,7 @@ public class Crypto {
      * Retorna uma chave de 64 bytes, inicialmente será usada para encryptar os dados do Realm.
      * @return byte[]
      */
-    public byte[] getKey() {
+    public static byte[] getKey() {
         byte[] key = new byte[64];
         new SecureRandom().nextBytes(key);
         return key;
