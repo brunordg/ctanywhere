@@ -10,11 +10,11 @@ import java.util.Set;
  */
 
 public class Pref {
-
+    
     private static final String TAG = "Pref";
-
+    
     private static final String FILE = "PREFERENCE_FILE_KEY";
-
+    
     /**
      * Escreve nas SharedPreferences privadas
      * @param key
@@ -24,7 +24,7 @@ public class Pref {
     public static void write(String key, Object value, Context context) {
         SharedPreferences sharedPreferences = context.getSharedPreferences(context.getPackageName() + FILE, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
-    
+        
         if (value instanceof Boolean) {
             editor.putBoolean(key, (Boolean) value);
         } else if (value instanceof Float) {
@@ -40,10 +40,10 @@ public class Pref {
         } else {
             throw new RuntimeException("Tipo de preference (" + value.getClass().getSimpleName() + ") não suportado, os tipos suportados são {Boolean, Float, Integer, Long, String, Set<String>}");
         }
-
+        
         editor.apply();
     }
-
+    
     /**
      * Lê as SharedPreferences privadas
      * @param key
@@ -54,7 +54,7 @@ public class Pref {
     public static <T> T read(String key, Context context) {
         return (T) context.getSharedPreferences(context.getPackageName() + FILE, Context.MODE_PRIVATE).getAll().get(key);
     }
-
+    
     /**
      * Limpa todos as SharedPreferences do projeto
      * @param context
@@ -62,7 +62,7 @@ public class Pref {
     public static void clearAll(Context context) {
         context.getSharedPreferences(context.getPackageName() + FILE, Context.MODE_PRIVATE).edit().clear().commit();
     }
-
+    
     /**
      * Registra o Listener quando é alterado alguma SharedPreference do app
      * @param context
@@ -71,7 +71,7 @@ public class Pref {
     public static void registerPreferenceChanged(Context context, SharedPreferences.OnSharedPreferenceChangeListener listener) {
         context.getSharedPreferences(context.getPackageName() + FILE, Context.MODE_PRIVATE).registerOnSharedPreferenceChangeListener(listener);
     }
-
+    
     /**
      * Desregistra o Listener de alteração de SharedPreferences
      * @param context

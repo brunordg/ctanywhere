@@ -5,6 +5,7 @@ import android.util.Base64;
 import java.security.InvalidAlgorithmParameterException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
 import java.security.spec.AlgorithmParameterSpec;
 
 import javax.crypto.BadPaddingException;
@@ -64,5 +65,15 @@ public class Crypto {
 
         //return new String(cipher.doFinal(Base64.decodeBase64(text.getBytes())));
         return new String(cipher.doFinal(Base64.decode(text.getBytes(), Base64.CRLF)));
+    }
+    
+    /**
+     * Retorna uma chave de 64 bytes, inicialmente será usada para encryptar os dados do Realm.
+     * @return byte[]
+     */
+    public byte[] getKey() {
+        byte[] key = new byte[64];
+        new SecureRandom().nextBytes(key);
+        return key;
     }
 }
