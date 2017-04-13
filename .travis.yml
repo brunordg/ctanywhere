@@ -1,5 +1,13 @@
 language: android
 android:
+  jdk:
+    - oraclejdk7
+  branches:
+    only:
+      - master
+  before_install:
+    - chmod +x gradlew
+    - sudo apt-get update -qq
   components:
     - extra-android-m2repository
     - extra-google-m2repository
@@ -8,6 +16,5 @@ android:
     - platform-tools
     - build-tools-25.0.2
     - android-25
-
-  script:
-     - ./gradlew build connectedCheck
+  install:
+    - true
