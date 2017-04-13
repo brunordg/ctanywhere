@@ -1,4 +1,4 @@
-package com.neoenergia.ctanywhere;
+package br.com.codeteam.ctanywhere;
 
 import android.content.Context;
 import android.content.SharedPreferences;

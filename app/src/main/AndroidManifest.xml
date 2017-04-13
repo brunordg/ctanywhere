@@ -1,4 +1,4 @@
-<manifest package="com.neoenergia.ctanywhere"
+<manifest package="br.ctanywhere"
           xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application

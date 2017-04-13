@@ -1,4 +1,4 @@
-package com.neoenergia.ctanywhere;
+package br.com.codeteam.ctanywhere;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -6,13 +6,13 @@ import android.support.test.filters.SmallTest;
 import android.support.test.runner.AndroidJUnit4;
 import android.util.Log;
 
-import br.com.codeteam.ctanywhere.utils.Json;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import static org.junit.Assert.*;
+import br.com.codeteam.ctanywhere.utils.Json;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * Teste unitário para testar a classe de preferences

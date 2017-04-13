@@ -1,4 +1,4 @@
-package com.neoenergia.ctanywhere;
+package br.ctanywhere;
 
 import android.telephony.PhoneNumberUtils;
 
