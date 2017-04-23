@@ -1,8 +1,5 @@
 language: android
 jdk: oraclejdk7
-cache:
-  directories:
-   - android_cache
 sudo: false
 
 android:
