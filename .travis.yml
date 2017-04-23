@@ -1,15 +1,16 @@
 language: android
-jdk: oraclejdk8
-
-before_install:
-  - chmod +x gradlew
+jdk: oraclejdk7
+cache:
+  directories:
+   - android_cache
+sudo: false
 
 android:
   components:
-    # Uncomment the lines below if you want to
+   # Uncomment the lines below if you want to
     # use the latest revision of Android SDK Tools
-    - platform-tools
-    - tools
+    # - platform-tools
+    # - tools
 
     # The BuildTools version used by your project
     - build-tools-25.0.2
@@ -21,26 +22,30 @@ android:
     - extra-google-google_play_services
     - extra-google-m2repository
     - extra-android-m2repository
-    - addon-google_apis-google-25
+    # - addon-google_apis-google-19
+    # - add-on
+    # - extra
 
     # Specify at least one system image,
     # if you need to run emulator(s) during your tests
     - sys-img-armeabi-v7a-android-25
+    # - sys-img-x86-android-17
 
-  env:
-    global:
-     # install timeout in minutes (2 minutes by default)
-      - ADB_INSTALL_TIMEOUT=8
+  licenses:
+   - 'android-sdk-license-.+'
 
-  # Emulator Management: Create, Start and Wait
-  before_script:
-    - echo no | android create avd --force -n test -t android-25 --abi armeabi-v7a
-    - emulator -avd test -no-skin -no-audio -no-window &
-    - android-wait-for-emulator
-    - adb shell input keyevent 82 &
+env:
+  global:
+   # install timeout in minutes (2 minutes by default)
+    - ADB_INSTALL_TIMEOUT=8
 
-  # By default Travis-ci executes './gradlew build connectedCheck' if no 'script:' section found.
-  script:
-    - android list target
-    - ./gradlew assembleRelease
+# Emulator Management: Create, Start and Wait
+before_script:
+  - echo no | android create avd --force -n test -t android-25 --abi armeabi-v7a
+  - emulator -avd test -no-skin -no-audio -no-window &
+  - android-wait-for-emulator
+  - adb shell input keyevent 82 &
 
+script:
+  - android list target
+  - ./gradlew connectedAndroidTest
