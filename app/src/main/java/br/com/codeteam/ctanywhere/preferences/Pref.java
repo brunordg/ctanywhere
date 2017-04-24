@@ -10,9 +10,6 @@ import java.util.Set;
  */
 
 public class Pref {
-    
-    private static final String TAG = "Pref";
-    
     private static final String FILE = "PREFERENCE_FILE_KEY";
     
     /**

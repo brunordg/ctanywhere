@@ -15,6 +15,7 @@ public abstract class BaseActivity extends AppCompatActivity {
      * Show ProgressDialog
      */
     public void showProgressDialog() {
+        
         if (this.mProgressDialog == null) {
             this.mProgressDialog = new ProgressDialog(this);
             this.mProgressDialog.setIndeterminate(true);
