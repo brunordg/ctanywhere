@@ -1,46 +1,27 @@
 language: android
+sudo: false
 jdk: oraclejdk8
-
-before_install:
-  - chmod +x gradlew
 
 android:
   components:
-    # Uncomment the lines below if you want to
-    # use the latest revision of Android SDK Tools
-    - platform-tools
-    - tools
+  - tools
+  - platform-tools
+  - build-tools-25.0.2
+  - android-25
+  - extra-android-m2repository
 
-    # The BuildTools version used by your project
-    - build-tools-25.0.2
+script: './gradlew build check'
 
-    # The SDK version used to compile your project
-    - android-25
+before_install:
+- openssl aes-256-cbc -K $encrypted_69044bd0f1e4_key -iv $encrypted_69044bd0f1e4_iv -in secrets.tar.enc -out secrets.tar -d
+- tar xvf secrets.tar
 
-    # Additional components
-    - extra-google-google_play_services
-    - extra-google-m2repository
-    - extra-android-m2repository
-    - addon-google_apis-google-25
-
-    # Specify at least one system image,
-    # if you need to run emulator(s) during your tests
-    - sys-img-armeabi-v7a-android-21
-
-env:
-  global:
-   # install timeout in minutes (2 minutes by default)
-    - ADB_INSTALL_TIMEOUT=8
-
-# Emulator Management: Create, Start and Wait
-before_script:
-  - echo no | android create avd --force -n test -t android-21 --abi armeabi-v7a
-  - emulator -avd test -no-skin -no-audio -no-window &
-  - android-wait-for-emulator
-  - adb shell input keyevent 82 &
-
-# By default Travis-ci executes './gradlew build connectedCheck' if no 'script:' section found.
-script:
-  - android list target
-  - ./gradlew assembleRelease
-
+deploy:
+  provider: releases
+  api_key:
+    secure: F3kIk1Ec9v1JwcWX80FUnKLiDefF5hEGtRFfq0ffH7F3s4ZfhdTUkdXonkMFgOo6vHKfORtC8Zb/TlzdKseEst0Fo+zcLOIu52+OHatL2ufeM5ed/SLbomMGo6mBQdB/aoEZsRrIIl+4M/hZIecDzh8Akbg/GwUpDrWfAXUFvLqf1oRquoaOfjkCu2zXuzbJzi3z0vsY31j+0eEXtnJWpxPJwc3DsJN1AF1LttIZTWoC2U7/iDU9p3lscNeS50KzvoPvk/ZTIVC1BtVvvlma1xx8fV3pDrz9LWZSXwUmfONCgCpwDd3iLtA7mx5VqmPSpQP13d7tlpTEs1wKs93CtohS00Pkt19rQ2JmJE4Ql4QqlCnhxM67b1rMzRuZ6ldLyW0/tDuoThiou1xx+l2U7NFoZWhe5XoRlollmPo65/WDCTOKqQnqO5tg0/aKyMVO6PiO5mg8NIDcNSdB/tm2XhtX5xgOCJ/qd5dY6HxmKTtHuBta21IRqwP+0ay2SzWgodm8jACgu6tTbZSxH43sM6MqVWEuJFh/t42DLfizjY+pMPo3+KiqN3PB0y6Hm6X+GZN01+5iCAIz4gaaoCmFWq4rk7U877vNPlaoXsYmQVU3buSvTBaFe0iJfrNrJuWihv85oy7Z8SM00S18EhTOpT3b0RRAF41Vtf0M1BsxAHA=
+  file: app/build/outputs/aar/app-release.aar
+  skip_cleanup: true
+  on:
+    repo: brunordg/ctanywhere
+    tags: true
