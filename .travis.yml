@@ -10,13 +10,12 @@ android:
   - android-25
   - extra-android-m2repository
 
-script: './gradlew build check'
+script: './gradlew assembleRelease'
 
 deploy:
   provider: releases
   api_key: 9fc271e6ff2965f3aaf1fcb77dd92cdef0b1ad6a
-  file: app/build/outputs/aar/app-release.aar
+  file: "/home/travis/build/brunordg/ctanywhere/app/build/outputs/aar/app-release.aar"
   skip_cleanup: true
   on:
-    repo: brunordg/ctanywhere
     tags: true
