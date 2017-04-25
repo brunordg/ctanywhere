@@ -14,7 +14,8 @@ script: './gradlew assembleRelease'
 
 deploy:
   provider: releases
-  api_key: 9fc271e6ff2965f3aaf1fcb77dd92cdef0b1ad6a
+  api_key:
+    secure: "oW36Z4uaDe4w9S5AHtK3CQbVDy7gie2OL6C/zcDbCPKny1cNM8NjgE7ffLJdU4O1XHSxnjD9PtnCtnlQ/of7xW2Oax4x7bbv7FrhFXJAFgbPsmFCpsOFQzoB/9+LrLst8PHsnswJoOuwpYzHdP9CwcAN9oloQQBTjqYtVk9EA4eNg0bVIEw44/yKO1gUvWg7/ox973XTJBo7WTIMbpkzFKxGXYDrKgtKwp6WZAkPSWaJwW+UjFOVq2PHDN7q4Jw0v7X4SrdzVpRmVo80NRf1LG65/zf59J51cGSd0XA+8IbCTEV/Pk52acDLL6Agv67YnLkpdX6M/uONWmLJFOQCLChZaVANJmHTy/50b9WkWK98v5ibmR5c73qeB8dhonV/I6glr5VQIHdom9hWSjzqgYOF/nZiYx/7LP7iFUJR+XJUjOo/fwl2fQQW7Lu4RknGMK81QT07zPMZwyUNq3pT7ECMEZ98or6+1EyD2EpPou/+Iv6VkrNVCxphiJ3g3sxKNc0QWM5xTiFKi0CxD5Xj6LwKG6ZpByNrLrXZ5Xg465euuh4vQ9v8Y1Of2r52Xeq0bOiU7yLPO30upWU8acDSm87Pv4iemIM5UiTq07y86tkDhg4oLD/Pcp6z68nsa/g86kAUmVpMGkARBQ4AfFawXxekQMqgNSdoluko/BxtZJs="
   file: "/home/travis/build/brunordg/ctanywhere/app/build/outputs/aar/app-release.aar"
   skip_cleanup: true
   on:
