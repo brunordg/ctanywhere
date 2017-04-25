@@ -14,8 +14,7 @@ script: './gradlew build check'
 
 deploy:
   provider: releases
-  api_key:
-    secure: F3kIk1Ec9v1JwcWX80FUnKLiDefF5hEGtRFfq0ffH7F3s4ZfhdTUkdXonkMFgOo6vHKfORtC8Zb/TlzdKseEst0Fo+zcLOIu52+OHatL2ufeM5ed/SLbomMGo6mBQdB/aoEZsRrIIl+4M/hZIecDzh8Akbg/GwUpDrWfAXUFvLqf1oRquoaOfjkCu2zXuzbJzi3z0vsY31j+0eEXtnJWpxPJwc3DsJN1AF1LttIZTWoC2U7/iDU9p3lscNeS50KzvoPvk/ZTIVC1BtVvvlma1xx8fV3pDrz9LWZSXwUmfONCgCpwDd3iLtA7mx5VqmPSpQP13d7tlpTEs1wKs93CtohS00Pkt19rQ2JmJE4Ql4QqlCnhxM67b1rMzRuZ6ldLyW0/tDuoThiou1xx+l2U7NFoZWhe5XoRlollmPo65/WDCTOKqQnqO5tg0/aKyMVO6PiO5mg8NIDcNSdB/tm2XhtX5xgOCJ/qd5dY6HxmKTtHuBta21IRqwP+0ay2SzWgodm8jACgu6tTbZSxH43sM6MqVWEuJFh/t42DLfizjY+pMPo3+KiqN3PB0y6Hm6X+GZN01+5iCAIz4gaaoCmFWq4rk7U877vNPlaoXsYmQVU3buSvTBaFe0iJfrNrJuWihv85oy7Z8SM00S18EhTOpT3b0RRAF41Vtf0M1BsxAHA=
+  api_key: 9fc271e6ff2965f3aaf1fcb77dd92cdef0b1ad6a
   file: app/build/outputs/aar/app-release.aar
   skip_cleanup: true
   on:
