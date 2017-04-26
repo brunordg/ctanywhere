@@ -1,7 +1,8 @@
 package br.com.codeteam.ctanywhere.commons;
 
-import android.app.ProgressDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.ProgressBar;
 
 /**
  * Created by Bruno Rodrigues e Rodrigues on 11/04/17.
@@ -9,27 +10,27 @@ import android.support.v7.app.AppCompatActivity;
 
 public abstract class BaseActivity extends AppCompatActivity {
     
-    public ProgressDialog mProgressDialog;
+    public ProgressBar mProgressBar;
     
     /**
      * Show ProgressDialog
      */
     public void showProgressDialog() {
         
-        if (this.mProgressDialog == null) {
-            this.mProgressDialog = new ProgressDialog(this);
-            this.mProgressDialog.setIndeterminate(true);
+        if (this.mProgressBar == null) {
+            this.mProgressBar = new ProgressBar(this, null, android.R.attr.progressBarStyleSmall);
+            this.mProgressBar.setIndeterminate(true);
         }
         
-        this.mProgressDialog.show();
+        this.mProgressBar.setVisibility(View.VISIBLE);
     }
     
     /**
      * Hide ProgressDialog
      */
     public void hideProgressDialog() {
-        if (this.mProgressDialog != null && this.mProgressDialog.isShowing()) {
-            this.mProgressDialog.dismiss();
+        if (this.mProgressBar != null && this.mProgressBar.isShown()) {
+            this.mProgressBar.setVisibility(View.GONE);
         }
     }
     
