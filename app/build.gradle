@@ -33,4 +33,5 @@ dependencies {
 
     //Others
     compile 'com.googlecode.libphonenumber:libphonenumber:8.4.0'
+    compile 'com.jakewharton.timber:timber:4.5.1'
 }
