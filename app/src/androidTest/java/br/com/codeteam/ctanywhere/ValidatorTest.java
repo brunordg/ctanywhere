@@ -37,7 +37,7 @@ public class ValidatorTest {
     @Test
     public void isEmergencyNumber() {
     
-        Converter.toPhoneNumber("1-800-275-2273", "11");
+        Converter.INSTANCE.toPhoneNumber("1-800-275-2273", "11");
         //Converter.toPhoneNumber("20973709", "11");
         
 //        String ddd = "11";

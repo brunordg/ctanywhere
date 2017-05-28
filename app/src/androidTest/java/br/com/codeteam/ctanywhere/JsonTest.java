@@ -37,21 +37,21 @@ public class JsonTest {
     public void toJson() {
         Register register = new Register("ctanywhere");
 
-        Log.d(TAG, "toJson: " + Json.toJson(register));
+        Log.d(TAG, "toJson: " + Json.INSTANCE.toJson(register));
 
-        assertEquals(Json.toJson(register), "{\"name\":\"ctanywhere\"}");
+        assertEquals(Json.INSTANCE.toJson(register), "{\"name\":\"ctanywhere\"}");
     }
 
     @Test
     public void toJsonPretty() {
         Register register = new Register("ctanywhere");
 
-        Log.d(TAG, "toJson: " + Json.toJsonPretty(register));
+        Log.d(TAG, "toJson: " + Json.INSTANCE.toJsonPretty(register));
     }
 
     @Test
     public void toObject() {
-        Register register = Json.toObject("{\"name\":\"ctanywhere\"}", Register.class);
+        Register register = Json.INSTANCE.toObject("{\"name\":\"ctanywhere\"}", Register.class);
 
         Log.d(TAG, "toObject: " + register.getName());
 
