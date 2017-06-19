@@ -1,6 +1,6 @@
 [![CI Status](https://travis-ci.org/brunordg/ctanywhere.svg?branch=master&style=flat-square)](https://travis-ci.org/brunordg/ctanywhere)
 [![MIT license](https://img.shields.io/dub/l/vibe-d.svg?style=flat-square)](http://opensource.org/licenses/MIT)
-[![GitHub release](https://img.shields.io/github/release/qubyte/rubidium.svg?style=flat-square)](https://github.com/brunordg/ctanywhere)
+[![GitHub tag](https://img.shields.io/github/tag/expressjs/express.svg?style=flat-square)](https://github.com/brunordg/ctanywhere)
 
 ## Bem vindo a sua nova biblioteca de suporte para Android 
 
