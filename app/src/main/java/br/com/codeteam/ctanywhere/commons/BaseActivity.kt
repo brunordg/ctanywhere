@@ -31,6 +31,7 @@ abstract class BaseActivity : AppCompatActivity() {
         if (this.mProgressBar != null && this.mProgressBar!!.isShown) {
             this.mProgressBar!!.visibility = View.GONE
         }
+
     }
 
     override fun onStop() {
