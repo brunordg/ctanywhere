@@ -40,33 +40,33 @@ public class PrefTest {
 
     @Test
     public void write() {
-        Pref.write(KEY_NAME, NAME, this.appContext);
-        assertEquals(Pref.read(KEY_NAME, this.appContext), NAME);
+        Pref.INSTANCE.write(KEY_NAME, NAME, this.appContext);
+        assertEquals(Pref.INSTANCE.read(KEY_NAME, this.appContext), NAME);
 
-        Pref.write(KEY_TRUE, TRUE, this.appContext);
-        assertTrue(Pref.<Boolean>read(KEY_TRUE, this.appContext));
+        Pref.INSTANCE.write(KEY_TRUE, TRUE, this.appContext);
+        assertTrue(Pref.INSTANCE.<Boolean>read(KEY_TRUE, this.appContext));
     }
 
     @Test
     public void clear() {
         this.write();
 
-        Pref.clearAll(this.appContext);
-        assertNull(Pref.read(KEY_NAME, this.appContext));
+        Pref.INSTANCE.clearAll(this.appContext);
+        assertNull(Pref.INSTANCE.read(KEY_NAME, this.appContext));
     }
 
     @Test
     public void registerListener() {
         this.write();
 
-        Pref.registerPreferenceChanged(this.appContext, new SharedPreferences.OnSharedPreferenceChangeListener() {
+        Pref.INSTANCE.registerPreferenceChanged(this.appContext, new SharedPreferences.OnSharedPreferenceChangeListener() {
             @Override
             public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-                Log.d(TAG, "onSharedPreferenceChanged: " + Pref.read(key, appContext));
-                assertEquals(Pref.read(key, appContext), NAME_CHANGE);
+                Log.d(TAG, "onSharedPreferenceChanged: " + Pref.INSTANCE.read(key, appContext));
+                assertEquals(Pref.INSTANCE.read(key, appContext), NAME_CHANGE);
             }
         });
 
-        Pref.write(KEY_NAME, NAME_CHANGE, this.appContext);
+        Pref.INSTANCE.write(KEY_NAME, NAME_CHANGE, this.appContext);
     }
 }
