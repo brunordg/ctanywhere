@@ -3,7 +3,7 @@ package br.com.codeteam.ctanywhere.commons
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.ProgressBar
-import br.com.codeteam.ctanywhere.log.CTLog
+import br.com.codeteam.ctanywhere.log.Log
 
 /**
  * Created by Bruno Rodrigues e Rodrigues on 11/04/17.

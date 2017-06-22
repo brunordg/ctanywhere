@@ -6,7 +6,7 @@ import timber.log.Timber
  * Created by Bruno Rodrigues e Rodrigues on 28/04/17.
  */
 
-object CTLog {
+object Log {
 
     /**
      * Encapsula o Timber error
