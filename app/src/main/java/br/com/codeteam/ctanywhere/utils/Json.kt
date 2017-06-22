@@ -12,7 +12,6 @@ object Json {
     /**
      * Converte [Object] to Json
      * @param obj
-     * *
      * @return String
      */
     fun toJson(value: Any): String {
@@ -25,9 +24,7 @@ object Json {
     /**
      * Converte a [String] Json para o Objeto que representa
      * @param json
-     * *
      * @param clazz objeto que vai ser convertideo a partir da String json
-     * *
      * @return Retorna o objeto que representa o Json
      */
     fun <T> toObject(json: String, clazz: Class<T>): T {
@@ -37,7 +34,6 @@ object Json {
     /**
      * Converte o objeto em um Json formatado
      * @param value
-     * *
      * @return String
      */
     fun toJsonPretty(value: Any): String {

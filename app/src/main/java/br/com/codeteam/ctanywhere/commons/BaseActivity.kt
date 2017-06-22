@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.ProgressBar
 import br.com.codeteam.ctanywhere.log.Log
+import br.com.codeteam.ctanywhere.utils.Converter
 
 /**
  * Created by Bruno Rodrigues e Rodrigues on 11/04/17.
@@ -32,6 +33,7 @@ abstract class BaseActivity : AppCompatActivity() {
         if (this.mProgressBar != null && this.mProgressBar!!.isShown) {
             this.mProgressBar!!.visibility = View.GONE
         }
+
     }
 
     override fun onStop() {
