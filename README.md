@@ -2,6 +2,8 @@
 [![MIT license](https://img.shields.io/dub/l/vibe-d.svg?style=flat-square)](http://opensource.org/licenses/MIT)
 [![Github All Releases](https://img.shields.io/github/downloads/atom/atom/total.svg?style=flat-square)](https://github.com/brunordg/ctanywhere)
 
+[![GitHub issues](https://img.shields.io/github/issues/badges/shields.svg?style=flat-square)](https://github.com/brunordg/ctanywhere)
+
 ## Bem vindo a sua nova biblioteca de suporte para Android 
 
 Para você usar a biblioteca é simples, logo vamos adicionar mais funcionalidades que vão aumentar a sua produtividade para desenvolvimento de aplicativos móveis
