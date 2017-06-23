@@ -2,7 +2,6 @@
 [![MIT license](https://img.shields.io/dub/l/vibe-d.svg?style=flat-square)](http://opensource.org/licenses/MIT)
 [![Github All Releases](https://img.shields.io/github/downloads/atom/atom/total.svg?style=flat-square)](https://github.com/brunordg/ctanywhere)
 
-[![Travis](https://img.shields.io/travis/rust-lang/rust.svg?branch=master&style=flat-square)](https://travis-ci.org/brunordg/ctanywhere)
 
 ## Bem vindo a sua nova biblioteca de suporte para Android 
 
