@@ -2,11 +2,13 @@ package br.com.codeteam.ctanywhere.log
 
 import timber.log.Timber
 
-/**
- * Created by Bruno Rodrigues e Rodrigues on 28/04/17.
- */
-
 object Log {
+
+    fun init(debug: Boolean) {
+        if (debug) {
+            Timber.plant(Timber.DebugTree())
+        }
+    }
 
     /**
      * Encapsula o Timber error

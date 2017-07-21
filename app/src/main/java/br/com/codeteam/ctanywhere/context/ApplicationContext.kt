@@ -1,9 +1,12 @@
 package br.com.codeteam.ctanywhere.context
 
 import android.app.Application
+import br.com.codeteam.ctanywhere.log.Log
+import br.ctanywhere.BuildConfig
 
-/**
- * Created by Bruno Rodrigues e Rodrigues on 29/01/17.
- */
-
-abstract class ApplicationContext : Application()
+abstract class ApplicationContext : Application() {
+    override fun onCreate() {
+        super.onCreate()
+        Log.init(BuildConfig.DEBUG)
+    }
+}
