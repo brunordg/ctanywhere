@@ -20,7 +20,6 @@ object Log {
         Timber.e(e, message, *args)
     } else {
         Timber.e(message, *args)
-
     }
 
     /**
