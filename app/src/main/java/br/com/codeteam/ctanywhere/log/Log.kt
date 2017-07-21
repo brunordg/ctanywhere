@@ -16,10 +16,10 @@ object Log {
      * @param message
      * @param args
      */
-    fun e(e: Throwable? = null, message: String, vararg args: Any) = if (e != null) {
-        Timber.e(e, message, *args)
-    } else {
+    fun e(message: String, vararg args: Any, e: Throwable? = null) = if (e == null) {
         Timber.e(message, *args)
+    } else {
+        Timber.e(e, message, *args)
     }
 
     /**
@@ -27,19 +27,33 @@ object Log {
      * @param message
      * @param args
      */
-    fun d(message: String, vararg args: Any) = Timber.d(message, *args)
+    fun d(message: String, vararg args: Any, e: Throwable? = null) = if (e == null) {
+        Timber.d(message, *args)
+    } else {
+        Timber.d(e, message, *args)
+    }
 
     /**
      * Encapsula o Timber Info
+     * @param e
      * @param message
      * @param args
      */
-    fun i(message: String, vararg args: Any) = Timber.i(message, *args)
+    fun i(message: String, vararg args: Any, e: Throwable? = null) = if (e == null) {
+        Timber.i(message, *args)
+    } else {
+        Timber.i(e, message, *args)
+    }
 
     /**
      * Encapsula o Timber WTF
+     * @param e
      * @param message
      * @param args
      */
-    fun wtf(message: String, vararg args: Any) = Timber.wtf(message, *args)
+    fun wtf(message: String, vararg args: Any, e: Throwable? = null) = if (e == null) {
+        Timber.wtf(message, *args)
+    } else {
+        Timber.wtf(e, message, *args)
+    }
 }
