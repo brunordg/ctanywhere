@@ -10,6 +10,10 @@ object Log {
         }
     }
 
+    fun tag(tag: String) {
+        Timber.tag(tag)
+    }
+
     /**
      * Encapsula o Timber error
      * @param e
