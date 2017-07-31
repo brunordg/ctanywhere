@@ -6,32 +6,7 @@ import android.widget.ProgressBar
 
 abstract class BaseActivity : AppCompatActivity() {
 
-    var mProgressBar: ProgressBar? = null
-
-    /**
-     * Show ProgressDialog
-     */
-    fun showProgressDialog() {
-        if (this.mProgressBar == null) {
-            this.mProgressBar = ProgressBar(this, null, android.R.attr.progressBarStyleSmall)
-            this.mProgressBar!!.isIndeterminate = true
-        }
-
-        this.mProgressBar!!.visibility = View.VISIBLE
-    }
-
-    /**
-     * Hide ProgressDialog
-     */
-    fun hideProgressDialog() {
-        if (this.mProgressBar != null && this.mProgressBar!!.isShown) {
-            this.mProgressBar!!.visibility = View.GONE
-        }
-
-    }
-
-    override fun onStop() {
-        super.onStop()
-        this.hideProgressDialog()
+    fun label(): String {
+        return resources.getString(packageManager.getActivityInfo(componentName, 0).labelRes)
     }
 }

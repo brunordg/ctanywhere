@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="hawk-2.0.1">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/hawk-2.0.1.aar/d5ee2b1767ed1641f16a3d510c404e25/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/hawk-2.0.1.aar/d5ee2b1767ed1641f16a3d510c404e25/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/hawk-2.0.1.aar/4e187fcc2180747435decd8a713888b6/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/hawk-2.0.1.aar/4e187fcc2180747435decd8a713888b6/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
