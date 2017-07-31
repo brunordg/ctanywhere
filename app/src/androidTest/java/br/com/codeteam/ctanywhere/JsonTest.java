@@ -4,13 +4,13 @@ import android.content.Context;
 import android.support.test.InstrumentationRegistry;
 import android.support.test.filters.SmallTest;
 import android.support.test.runner.AndroidJUnit4;
-import android.util.Log;
 
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import br.com.codeteam.ctanywhere.utils.Json;
+import timber.log.Timber;
 
 import static org.junit.Assert.assertEquals;
 
@@ -37,7 +37,7 @@ public class JsonTest {
     public void toJson() {
         Register register = new Register("ctanywhere");
 
-        Log.d(TAG, "toJson: " + Json.INSTANCE.toJson(register));
+        Timber.d("toJson: %s", Json.INSTANCE.toJson(register));
 
         assertEquals(Json.INSTANCE.toJson(register), "{\"name\":\"ctanywhere\"}");
     }
@@ -46,14 +46,14 @@ public class JsonTest {
     public void toJsonPretty() {
         Register register = new Register("ctanywhere");
 
-        Log.d(TAG, "toJson: " + Json.INSTANCE.toJsonPretty(register));
+        Timber.d("toJson: %s", Json.INSTANCE.toJsonPretty(register));
     }
 
     @Test
     public void toObject() {
         Register register = Json.INSTANCE.toObject("{\"name\":\"ctanywhere\"}", Register.class);
 
-        Log.d(TAG, "toObject: " + register.getName());
+        Timber.d("toObject: %s", register.getName());
 
         assertEquals(register.toString(), new Register("ctanywhere").toString());
     }
