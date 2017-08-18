@@ -8,4 +8,5 @@
         blank
         fragment
     </string>
+    <string name="campo_requerido">Campo requerido</string>
 </resources>

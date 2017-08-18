@@ -4,13 +4,9 @@ import android.content.ContentValues.TAG
 import android.os.Build
 import android.telephony.PhoneNumberUtils
 import android.util.Log
-import com.google.gson.Gson
 import com.google.i18n.phonenumbers.NumberParseException
 import com.google.i18n.phonenumbers.PhoneNumberUtil
 
-/**
- * Created by Bruno Rodrigues e Rodrigues on 29/01/17.
- */
 object Converter {
 
     fun toPhoneNumber(phone: String, ddd: String): String {

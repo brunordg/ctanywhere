@@ -2,10 +2,7 @@ package br.com.codeteam.ctanywhere.preferences
 
 import android.content.Context
 import android.content.SharedPreferences
-
-/**
- * Created by bruno on 02/03/17.
- */
+import br.com.codeteam.ctanywhere.utils.Validator
 
 object Pref {
     private val FILE = "PREFERENCE_FILE_KEY"
@@ -52,7 +49,7 @@ object Pref {
      * @param context
      */
     fun clearAll(context: Context) {
-        context.getSharedPreferences(context.packageName + FILE, Context.MODE_PRIVATE).edit().clear().commit()
+        context.getSharedPreferences(context.packageName + FILE, Context.MODE_PRIVATE).edit().clear().apply()
     }
 
     /**
