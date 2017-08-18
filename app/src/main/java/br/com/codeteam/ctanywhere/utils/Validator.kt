@@ -11,10 +11,13 @@ import br.ctanywhere.R
 
 object Validator {
 
-    fun isEmptyOrNull(edt: EditText, context: Context, message: String = context.getString(R.string.campo_requerido)) =
-            if (TextUtils.isEmpty(edt.text.toString())) {
-                edt.error = message
-            } else {
-                edt.error = null
-            }
+    fun isEmptyOrNull(edt: EditText, context: Context, message: String = context.getString(R.string.campo_requerido)) : Boolean {
+        return if (TextUtils.isEmpty(edt.text.toString())) {
+            edt.error = message
+            true
+        } else {
+            edt.error = null
+            false
+        }
+    }
 }
