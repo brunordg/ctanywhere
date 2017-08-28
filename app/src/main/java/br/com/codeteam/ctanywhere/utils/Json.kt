@@ -11,7 +11,7 @@ object Json {
 
     /**
      * Converte [Object] to Json
-     * @param obj
+     * @param
      * @return String
      */
     fun toJson(value: Any): String {
@@ -28,7 +28,7 @@ object Json {
      * @return Retorna o objeto que representa o Json
      */
     fun <T> toObject(json: String, clazz: Class<T>): T {
-        return GsonBuilder().setLenient().create().fromJson(json, clazz);
+        return GsonBuilder().setLenient().create().fromJson(json, clazz)
     }
 
     /**

@@ -1,13 +1,10 @@
 package br.com.codeteam.ctanywhere.security
 
 import android.util.Base64
-
 import java.security.InvalidAlgorithmParameterException
 import java.security.InvalidKeyException
 import java.security.NoSuchAlgorithmException
 import java.security.SecureRandom
-import java.security.spec.AlgorithmParameterSpec
-
 import javax.crypto.BadPaddingException
 import javax.crypto.Cipher
 import javax.crypto.IllegalBlockSizeException

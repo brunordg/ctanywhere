@@ -2,7 +2,6 @@ package br.com.codeteam.ctanywhere.preferences
 
 import android.content.Context
 import android.content.SharedPreferences
-import br.com.codeteam.ctanywhere.utils.Validator
 
 object Pref {
     private val FILE = "PREFERENCE_FILE_KEY"
@@ -17,7 +16,7 @@ object Pref {
         val sharedPreferences = context.getSharedPreferences(context.packageName + FILE, Context.MODE_PRIVATE)
         val editor = sharedPreferences.edit()
 
-        when(value) {
+        when (value) {
             is Boolean -> editor.putBoolean(key, value)
             is Float -> editor.putFloat(key, value)
             is Int -> editor.putInt(key, value)

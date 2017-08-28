@@ -16,7 +16,7 @@ import static org.junit.Assert.assertEquals;
 
 /**
  * Teste unitário para testar a classe de preferences
- *
+ * <p>
  * Created by bruno on 15/03/17.
  *
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
@@ -26,11 +26,9 @@ import static org.junit.Assert.assertEquals;
 public class JsonTest {
     private static final String TAG = "JsonTest";
 
-    private Context appContext;
-
     @Before
     public void setup() {
-        this.appContext = InstrumentationRegistry.getTargetContext();
+        Context appContext = InstrumentationRegistry.getTargetContext();
     }
 
     @Test
@@ -64,9 +62,11 @@ public class JsonTest {
         public Register(String name) {
             this.name = name;
         }
+
         public String getName() {
             return name;
         }
+
         public void setName(String name) {
             this.name = name;
         }

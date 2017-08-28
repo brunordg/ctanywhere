@@ -1,5 +1,5 @@
-<manifest package="br.ctanywhere"
-          xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="br.ctanywhere">
 
     <application
         android:allowBackup="true"
