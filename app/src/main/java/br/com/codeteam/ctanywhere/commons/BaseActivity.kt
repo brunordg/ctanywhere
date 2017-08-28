@@ -12,11 +12,11 @@ abstract class BaseActivity : AppCompatActivity(), BaseView {
     }
 
     override fun showSnackBar(@StringRes id: Int, type: SnackCustom.Type) {
-        SnackCustom(this).build(id, type)
+        SnackCustom(this).build(id, type).show()
     }
 
     override fun showSnackBar(message: String, type: SnackCustom.Type) {
-        SnackCustom(this).build(message, type)
+        SnackCustom(this).build(message, type).show()
     }
 
     fun label(): String {
