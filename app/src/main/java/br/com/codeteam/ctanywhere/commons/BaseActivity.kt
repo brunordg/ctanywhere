@@ -2,12 +2,10 @@ package br.com.codeteam.ctanywhere.commons
 
 import android.content.Context
 import android.support.v7.app.AppCompatActivity
-import android.view.View
-import android.widget.ProgressBar
 
-abstract class BaseActivity : AppCompatActivity() {
+abstract class BaseActivity : AppCompatActivity(), BaseView {
 
-    fun getContext() : Context {
+    override fun getContext(): Context {
         return applicationContext
     }
 
