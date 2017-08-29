@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">CTAnywhere</string>
     <string name="campo_requerido">Campo requerido</string>
+    <string name="campo_minimo">Tamanho mínimo: %i</string>
+    <string name="campo_maximo">Tamanho máximo %i</string>
 </resources>
