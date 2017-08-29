@@ -17,8 +17,8 @@ object Validator {
         }
     }
 
-    fun isMinorOrEqual(edt: EditText, context: Context, size: Int, message: String = String.format(context.getString(R.string.campo_minimo), size)): Boolean {
-        return if (edt.text.length <= size) {
+    fun isMinorOr(edt: EditText, context: Context, size: Int, message: String = String.format(context.getString(R.string.campo_minimo), size)): Boolean {
+        return if (edt.text.length < size) {
             edt.error = message
             true
         } else {
@@ -28,8 +28,8 @@ object Validator {
     }
 
 
-    fun isMajorOrEqual(edt: EditText, context: Context, size: Int, message: String = String.format(context.getString(R.string.campo_maximo), size)): Boolean {
-        return if (edt.text.length >= size) {
+    fun isMajorOr(edt: EditText, context: Context, size: Int, message: String = String.format(context.getString(R.string.campo_maximo), size)): Boolean {
+        return if (edt.text.length > size) {
             edt.error = message
             true
         } else {
