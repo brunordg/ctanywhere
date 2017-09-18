@@ -23,7 +23,7 @@ allprojects {
 
 ```
 dependencies {
-	compile 'com.github.brunordg:ctanywhere:1.0.27-SNAPSHOT'
+	compile 'com.github.brunordg:ctanywhere:1.0.38-SNAPSHOT'
 }
 ```
 
