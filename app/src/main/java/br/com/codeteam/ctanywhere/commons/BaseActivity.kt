@@ -50,9 +50,9 @@ abstract class BaseActivity : AppCompatActivity(), BaseView {
      *          negativeButton { "No" }
      *      }
      */
-    fun showAlert(showAlertDialog: AlertDialog.Builder.() -> Any) {
-        return with(AlertDialog.Builder(this)) {
-//            showAlertDialog
+    fun showAlert(context: Context, showAlertDialog: AlertDialog.Builder.() -> Any) {
+        with(AlertDialog.Builder(context)) {
+            showAlertDialog
             create()
             show()
         }
