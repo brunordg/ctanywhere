@@ -43,18 +43,17 @@ abstract class BaseActivity : AppCompatActivity(), BaseView {
 
     /**
      * <b>Example:</b><br/>
-     *      showAlert {
-     *          setTitle("Testando Titulo")
-     *          setMessage("Testando mensagem")
+     *      showAlert(this, "Titulo", "Mensagem") {
      *          positiveButton { Toast.makeText(this@BaseActivity, "Positive Button", Toast.LENGTH_SHORT).show() }
      *          negativeButton { "No" }
+     *          create()
+     *          show()
      *      }
      */
-    fun showAlert(context: Context, showAlertDialog: AlertDialog.Builder.() -> Any) {
+    fun showAlert(context: Context, title: String, message: String, showAlertDialog: AlertDialog.Builder.() -> Any) {
         with(AlertDialog.Builder(context)) {
-            showAlertDialog
-            create()
-            show()
+            setTitle(title)
+            setMessage(message)
         }
     }
 
