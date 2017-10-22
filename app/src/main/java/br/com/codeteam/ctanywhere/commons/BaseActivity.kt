@@ -3,10 +3,8 @@ package br.com.codeteam.ctanywhere.commons
 import android.content.Context
 import android.support.annotation.StringRes
 import android.support.v4.app.FragmentTransaction
-import android.support.v4.app.NotificationCompat
 import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
-import android.widget.Toast
 import br.com.codeteam.ctanywhere.view.snackbar.SnackCustom
 
 abstract class BaseActivity : AppCompatActivity(), BaseView {
@@ -50,7 +48,7 @@ abstract class BaseActivity : AppCompatActivity(), BaseView {
      *          show()
      *      }
      */
-    fun showAlert(context: Context, title: String, message: String, showAlertDialog: AlertDialog.Builder.() -> Any) {
+    fun showAlert(context: Context, title: String, message: String) {
         with(AlertDialog.Builder(context)) {
             setTitle(title)
             setMessage(message)
