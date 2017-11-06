@@ -1,7 +1,8 @@
 package br.com.codeteam.ctanywhere.utils
 
-/**
- * Created by Bruno Rodrigues e Rodrigues on 09/04/17.
- */
+object StringUtils {
 
-class StringUtils
+    fun isBlankOrNull(value: String?): Boolean {
+        return null == value || "" == value.trim()
+    }
+}
