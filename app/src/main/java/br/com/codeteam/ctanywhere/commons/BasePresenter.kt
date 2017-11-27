@@ -1,7 +1,21 @@
 package br.com.codeteam.ctanywhere.commons
 
-/**
- * Created by Bruno Rodrigues e Rodrigues on 12/04/17.
- */
+import br.com.codeteam.ctanywhere.exception.CTException
 
-abstract class BasePresenter
+abstract class BasePresenter<View : BaseView> {
+
+    private var view: View? = null
+
+    fun attach(view: View) {
+        this.view = view
+    }
+
+    fun view(): View? {
+
+        if (this.view == null) {
+            throw CTException("View is NULL on presenter, please call the fun attach(view: T) on your view")
+        }
+
+        return this.view
+    }
+}
