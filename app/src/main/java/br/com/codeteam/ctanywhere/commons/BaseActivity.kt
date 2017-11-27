@@ -6,14 +6,12 @@ import android.graphics.Color
 import android.graphics.Typeface
 import android.os.Build
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.support.annotation.RequiresApi
 import android.support.annotation.StringRes
 import android.support.v4.app.FragmentTransaction
 import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.AppCompatDrawableManager
-import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import br.com.codeteam.ctanywhere.view.snackbar.SnackCustom
