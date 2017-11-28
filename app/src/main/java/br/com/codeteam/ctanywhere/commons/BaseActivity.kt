@@ -25,13 +25,6 @@ abstract class BaseActivity : AppCompatActivity(), BaseView {
     abstract fun setUp()
 
     /**
-     * Recupera o contexto da aplicação
-     */
-    override fun getContext(): Context {
-        return applicationContext
-    }
-
-    /**
      * Exibi o SnackBar Custom
      */
     override fun showSnackBar(@StringRes id: Int, type: SnackCustom.Type) {

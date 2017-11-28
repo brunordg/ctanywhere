@@ -1,6 +1,7 @@
 package br.com.codeteam.ctanywhere.commons
 
-import br.com.codeteam.ctanywhere.exception.CTException
+import android.content.Context
+import br.com.codeteam.ctanywhere.exception.CTRuntimeException
 
 abstract class BasePresenter<View : BaseView>: BaseInterfacePresenter<View> {
 
@@ -11,11 +12,28 @@ abstract class BasePresenter<View : BaseView>: BaseInterfacePresenter<View> {
     }
 
     override fun view(): View? {
-
-        if (this.view == null) {
-            throw CTException("View is NULL on presenter, please call the fun attach(view: T) on your view")
-        }
+        this.isViewValid()
 
         return this.view
+    }
+
+    fun getContext(): Context? {
+        this.isViewValid()
+
+        if (this.view is BaseActivity || this.view is BaseFragment) {
+            if (this.view?.getContext() == null) throw CTRuntimeException("Context is null on: " + this.view?.javaClass?.simpleName)
+
+            return this.view?.getContext()!!
+        }
+
+        return null
+    }
+
+    private fun isViewValid(): Boolean {
+        if (this.view == null) {
+            throw CTRuntimeException("View is NULL on presenter, please call the fun attach(view: T) on your view")
+        }
+
+        return true
     }
 }

@@ -1,6 +1,6 @@
 package br.com.codeteam.ctanywhere.exception
 
-class CTException: RuntimeException {
+class CTRuntimeException : RuntimeException {
 
     constructor() : super()
     constructor(message: String?) : super(message)
