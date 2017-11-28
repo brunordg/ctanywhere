@@ -18,21 +18,29 @@ import br.com.codeteam.ctanywhere.view.snackbar.SnackCustom
 
 abstract class BaseActivity : AppCompatActivity(), BaseView {
 
-    protected abstract fun setUp()
+    /**
+     * Implementar este método quando é necessário fazer alguma inicialização<br/>
+     * É necessário chamar no onCreate
+     */
+    abstract fun setUp()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        this.setUp()
-    }
-
+    /**
+     * Recupera o contexto da aplicação
+     */
     override fun getContext(): Context {
         return applicationContext
     }
 
+    /**
+     * Exibi o SnackBar Custom
+     */
     override fun showSnackBar(@StringRes id: Int, type: SnackCustom.Type) {
         SnackCustom(this).build(id, type).show()
     }
 
+    /**
+     * Exibi o SnackBar Custom
+     */
     override fun showSnackBar(message: String, type: SnackCustom.Type) {
         SnackCustom(this).build(message, type).show()
     }
