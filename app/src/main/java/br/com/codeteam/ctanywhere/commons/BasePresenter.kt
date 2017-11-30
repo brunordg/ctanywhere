@@ -30,7 +30,7 @@ abstract class BasePresenter<View : BaseView>: BaseInterfacePresenter<View> {
     }
 
     private fun isViewValid(): Boolean {
-        if (this.view == null) {
+        if (null == this.view) {
             throw CTRuntimeException("View is NULL on presenter, please call the fun attach(view: T) on your view")
         }
 
