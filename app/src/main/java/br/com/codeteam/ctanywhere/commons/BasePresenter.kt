@@ -20,7 +20,7 @@ abstract class BasePresenter<View : BaseView>: BaseInterfacePresenter<View> {
     fun getContext(): Context {
         this.isViewValid()
 
-        return this.view?.getContext()!!
+        return this.view!!.getContext()
     }
 
     private fun isViewValid(): Boolean {
