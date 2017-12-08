@@ -29,7 +29,6 @@ class JsonTest {
     fun toJson() {
         val register = Register("ctanywhere")
 
-
         Timber.d("toJson: %s", Json.toJson(register))
 
         assertEquals(Json.toJson(register), "{\"name\":\"ctanywhere\"}")

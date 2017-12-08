@@ -2,7 +2,6 @@ package br.com.codeteam.ctanywhere
 
 import android.os.Build
 import android.support.annotation.RequiresApi
-import android.support.test.InstrumentationRegistry
 import android.support.test.filters.SmallTest
 import android.support.test.runner.AndroidJUnit4
 import br.com.codeteam.ctanywhere.utils.Converter

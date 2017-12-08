@@ -4,7 +4,7 @@ import android.content.Context
 import android.text.TextUtils
 import android.util.Patterns
 import android.widget.EditText
-import br.ctanywhere.R
+import br.com.codeteam.ctanywhere.R
 
 class Validator {
     companion object {

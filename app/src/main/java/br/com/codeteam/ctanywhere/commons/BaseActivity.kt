@@ -5,7 +5,6 @@ import android.content.Context
 import android.graphics.Color
 import android.graphics.Typeface
 import android.os.Build
-import android.os.Bundle
 import android.support.annotation.RequiresApi
 import android.support.annotation.StringRes
 import android.support.v4.app.FragmentTransaction

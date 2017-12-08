@@ -8,7 +8,7 @@ import android.text.Spanned
 import android.text.style.ForegroundColorSpan
 import android.text.style.ImageSpan
 import android.view.ViewGroup
-import br.ctanywhere.R
+import br.com.codeteam.ctanywhere.R
 
 class SnackCustom(val activity: AppCompatActivity) {
 

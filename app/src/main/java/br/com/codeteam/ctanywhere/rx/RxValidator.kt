@@ -2,7 +2,7 @@ package br.com.codeteam.ctanywhere.rx
 
 import android.content.Context
 import android.widget.EditText
-import br.ctanywhere.R
+import br.com.codeteam.ctanywhere.R
 import io.reactivex.Observable
 import timber.log.Timber
 
