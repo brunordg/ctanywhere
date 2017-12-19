@@ -23,10 +23,10 @@ allprojects {
 
 ```
 dependencies {
-	compile 'com.github.brunordg:ctanywhere:1.0.43'
+	compile 'com.github.brunordg:ctanywhere:1.0.54'
 }
 ```
 
 ### Suporte ou contato
 
-**Email:** bruno@codeteam.com.br
+**Email:** rodrigues.brodrigues@gmail.com
