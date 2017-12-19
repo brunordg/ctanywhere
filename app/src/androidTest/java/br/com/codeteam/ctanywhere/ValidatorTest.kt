@@ -56,8 +56,10 @@ class ValidatorTest {
         //        assertTrue(PhoneNumberUtils.isLocalEmergencyNumber(this.appContext, "190"));
     }
 
-    companion object {
+    @Test
+    fun teste() {
+        //println(Testando().operationProvider(10, 5, Testando.ADD))
 
-        val TAG = "ValidatorTest"
+        println(Testando().operationProvider(10, 5, 10))
     }
 }
