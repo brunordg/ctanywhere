@@ -18,12 +18,6 @@ import br.com.codeteam.ctanywhere.view.snackbar.SnackCustom
 abstract class BaseActivity : AppCompatActivity(), BaseView {
 
     /**
-     * Implementar este método quando é necessário fazer alguma inicialização<br/>
-     * É necessário chamar no onCreate
-     */
-    abstract fun setUp()
-
-    /**
      * Retorna o contexto da aplicação
      */
     override fun getContext(): Context {
