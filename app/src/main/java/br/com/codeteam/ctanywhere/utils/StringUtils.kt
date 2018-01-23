@@ -4,15 +4,11 @@ package br.com.codeteam.ctanywhere.utils
  * Classe para facilitar o uso de operações com String
  * Created by bruno on 15/03/17.
  */
-class StringUtils {
-
-    companion object {
-
-        /**
-         * Valida se a String está branca ou nula
-         */
-        fun isBlankOrNull(value: String?): Boolean {
-            return null == value || "" == value.trim()
-        }
+object StringUtils {
+    /**
+     * Valida se a String está branca ou nula
+     */
+    fun isBlankOrNull(value: String?): Boolean {
+        return null == value || "" == value.trim()
     }
 }

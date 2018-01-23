@@ -55,11 +55,4 @@ class ValidatorTest {
         //
         //        assertTrue(PhoneNumberUtils.isLocalEmergencyNumber(this.appContext, "190"));
     }
-
-    @Test
-    fun teste() {
-        //println(Testando().operationProvider(10, 5, Testando.ADD))
-
-        println(Testando().operationProvider(10, 5, 10))
-    }
 }

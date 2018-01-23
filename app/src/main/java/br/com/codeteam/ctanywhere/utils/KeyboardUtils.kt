@@ -10,31 +10,29 @@ import android.widget.EditText
  * Created by Bruno Rodrigues on 24/11/2017.
  * Classe para auxiliar as funções do teclado
  */
-class KeyboardUtils {
-    companion object {
-        fun hideSoftInput(activity: Activity) {
-            var view = activity.currentFocus
+object KeyboardUtils {
+    fun hideSoftInput(activity: Activity) {
+        var view = activity.currentFocus
 
-            if (null == view) view = View(activity)
+        if (null == view) view = View(activity)
 
-            val iml = activity.getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
+        val iml = activity.getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
 
-            iml.hideSoftInputFromInputMethod(view.windowToken, 0)
-        }
+        iml.hideSoftInputFromInputMethod(view.windowToken, 0)
+    }
 
-        fun showSoftInput(edit: EditText, context: Context) {
-            edit.isFocusable = true
-            edit.isFocusableInTouchMode = true
-            edit.requestFocus()
+    fun showSoftInput(edit: EditText, context: Context) {
+        edit.isFocusable = true
+        edit.isFocusableInTouchMode = true
+        edit.requestFocus()
 
-            val iml = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-            iml.showSoftInput(edit, 0)
-        }
+        val iml = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        iml.showSoftInput(edit, 0)
+    }
 
-        fun toggleSoftInput(context: Context) {
-            val iml = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+    fun toggleSoftInput(context: Context) {
+        val iml = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
 
-            iml.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0)
-        }
+        iml.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0)
     }
 }

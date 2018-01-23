@@ -3,4 +3,9 @@
     <string name="campo_requerido">Campo requerido</string>
     <string name="campo_minimo">Tamanho mínimo: %d</string>
     <string name="campo_maximo">Tamanho máximo %d</string>
+    <string name="titulo_conexao">Conexão de internet</string>
+    <string name="mensagem_validacao_internet">Por favor verifique a sua conexão com a internet</string>
+    <string name="configuracao">Configuração</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="ok">@android:string/ok</string>
 </resources>
