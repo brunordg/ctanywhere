@@ -49,7 +49,8 @@ class SnackCustom(val activity: AppCompatActivity) {
         when (type) {
             Type.WARN -> snackViewSuccess.setBackgroundColor(ContextCompat.getColor(this.activity, R.color.SnackbarYellow))
             Type.ERROR -> snackViewSuccess.setBackgroundColor(ContextCompat.getColor(this.activity, R.color.SnackbarRed))
-            else -> snackViewSuccess.setBackgroundColor(ContextCompat.getColor(this.activity, R.color.SnackbarGreen))
+            Type.SUCCESS -> snackViewSuccess.setBackgroundColor(ContextCompat.getColor(this.activity, R.color.SnackbarGreen))
+            else -> snackViewSuccess.setBackgroundColor(ContextCompat.getColor(this.activity, R.color.SnackbarBlue))
         }
 
         return snack
@@ -58,6 +59,7 @@ class SnackCustom(val activity: AppCompatActivity) {
     enum class Type(var value: String) {
         WARN("WARN"),
         ERROR("ERROR"),
-        INFO("INFO")
+        INFO("INFO"),
+        SUCCESS("SUCCESS")
     }
 }
