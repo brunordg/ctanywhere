@@ -30,6 +30,35 @@ object Pref {
     }
 
     /**
+     * Compara o valor de uma Preference com um valor aleatório passado como parâmetro
+     */
+    fun equals(key: String, value: Any, context: Context): Boolean {
+        val content = context.getSharedPreferences(context.packageName + FILE, Context.MODE_PRIVATE).all[key]
+
+        val type = when (content) {
+            is Boolean -> value is Boolean
+            is Float -> value is Float
+            is Int -> value is Int
+            is Long -> value is Long
+            is String -> value is String
+            else -> false
+        }
+
+        if (!type) {
+            throw RuntimeException("Os tipos de conparação são diferentes ( Value: " + value.javaClass.simpleName + " )")
+        }
+
+        return when (content) {
+            is Boolean -> content == value
+            is Float -> content == value
+            is Int -> content == value
+            is Long -> content == value
+            is String -> content.equals(value)
+            else -> throw RuntimeException("Este tipo de objeto não é possível executar uma comparação (" + value.javaClass.simpleName + ") os tipos suportados são {Boolean, Float, Integer, Long, String}")
+        }
+    }
+
+    /**
      * Lê as SharedPreferences privadas
      * @param key
      * *

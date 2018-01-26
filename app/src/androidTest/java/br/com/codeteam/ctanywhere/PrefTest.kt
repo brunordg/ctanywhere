@@ -57,6 +57,13 @@ class PrefTest {
         Pref.write(KEY_NAME, NAME_CHANGE, this.appContext!!)
     }
 
+    @Test
+    fun compare() {
+        Pref.write(KEY_NAME, NAME, this.appContext!!)
+
+        assertEquals(Pref.equals(KEY_NAME, NAME, appContext!!), true)
+    }
+
     companion object {
         private val TAG = "PrefTest"
 
