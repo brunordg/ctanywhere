@@ -2,6 +2,7 @@ package br.com.codeteam.ctanywhere
 
 import android.support.test.filters.SmallTest
 import android.support.test.runner.AndroidJUnit4
+import br.com.codeteam.ctanywhere.commons.BaseModel
 import br.com.codeteam.ctanywhere.utils.Json
 import org.junit.Assert.assertEquals
 import org.junit.Before
@@ -43,7 +44,7 @@ class JsonTest {
 
     @Test
     fun toObject() {
-        val register = Json.toObject("{\"name\":\"ctanywhere\"}", Register::class.java)
+        val register = Json.fromJson("{\"name\":\"ctanywhere\"}", Register::class.java)
 
         Timber.d("toObject: %s", register.name)
 
@@ -59,4 +60,7 @@ class JsonTest {
             return sb.toString()
         }
     }
+
+    data class JsonModel(val name: String, val age: Int) : BaseModel()
+
 }
