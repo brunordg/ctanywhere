@@ -5,6 +5,7 @@ import android.support.annotation.RequiresApi
 import android.support.test.filters.SmallTest
 import android.support.test.runner.AndroidJUnit4
 import br.com.codeteam.ctanywhere.utils.Converter
+import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -29,30 +30,6 @@ class ValidatorTest {
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Test
     fun isEmergencyNumber() {
-
-        Converter.toPhoneNumber("1-800-275-2273", "11")
-        //Converter.toPhoneNumber("20973709", "11");
-
-        //        String ddd = "11";
-        //        String telefone = "953279911";
-        //        String original = telefone;
-        //
-        //        telefone = PhoneNumberUtils.normalizeNumber(telefone);
-        //
-        //        if (telefone.length() == 8 || telefone.length() == 9) {
-        //            telefone = ddd + telefone;
-        //        }
-        //
-        //        telefone = PhoneNumberUtils.formatNumberToE164(telefone, "BR");
-        //
-        //        if (telefone == null) {
-        //            Log.d(TAG, "isEmergencyNumber: Número não é nacional? " + original);
-        //            return;
-        //        }
-        //        telefone = telefone.replace("+55", "0");
-        //
-        //        Log.d(TAG, "isEmergencyNumber: " + telefone);
-        //
-        //        assertTrue(PhoneNumberUtils.isLocalEmergencyNumber(this.appContext, "190"));
+        Assert.assertEquals("01120202020", Converter.toPhoneNumber("20202020", "11"))
     }
 }

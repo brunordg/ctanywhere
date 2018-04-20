@@ -4,7 +4,7 @@ import android.content.Context
 import android.content.SharedPreferences
 
 object Pref {
-    private val FILE = "PREFERENCE_FILE_KEY"
+    private const val FILE = "PREFERENCE_FILE_KEY"
 
     /**
      * Escreve nas SharedPreferences privadas
@@ -12,6 +12,7 @@ object Pref {
      * @param value
      * @param context
      */
+    @Suppress("UNCHECKED_CAST")
     fun write(key: String, value: Any, context: Context) {
         val sharedPreferences = context.getSharedPreferences(context.packageName + FILE, Context.MODE_PRIVATE)
         val editor = sharedPreferences.edit()
@@ -69,6 +70,7 @@ object Pref {
      * @return Retorna o objeto solicitado
     </T> */
     fun <T> read(key: String, context: Context): T {
+        @Suppress("UNCHECKED_CAST")
         return context.getSharedPreferences(context.packageName + FILE, Context.MODE_PRIVATE).all[key] as T
     }
 
