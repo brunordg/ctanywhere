@@ -30,7 +30,7 @@ abstract class BaseFragment : Fragment(), BaseView {
 
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun transparentStatusBar() {
-        activity.window.statusBarColor = Color.TRANSPARENT
+        activity?.window?.statusBarColor = Color.TRANSPARENT
     }
 
     @SuppressLint("RestrictedApi")
@@ -59,11 +59,11 @@ abstract class BaseFragment : Fragment(), BaseView {
     }
 
     fun AlertDialog.Builder.positiveButton(name: String = "OK", clickListener: (which: Int) -> Any = {}) {
-        setPositiveButton(name, { _, which -> clickListener(which)})
+        setPositiveButton(name, { _, which -> clickListener(which) })
     }
 
     fun AlertDialog.Builder.negativeButton(name: String = "Cancelar", clickListener: (which: Int) -> Any = {}) {
-        setNegativeButton(name, { _, which -> clickListener(which)})
+        setNegativeButton(name, { _, which -> clickListener(which) })
     }
 
 }

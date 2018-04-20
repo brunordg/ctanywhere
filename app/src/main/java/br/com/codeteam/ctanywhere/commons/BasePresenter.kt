@@ -1,6 +1,8 @@
 package br.com.codeteam.ctanywhere.commons
 
 import android.content.Context
+import android.support.v4.app.Fragment
+import android.support.v7.app.AppCompatActivity
 import br.com.codeteam.ctanywhere.exception.CTRuntimeException
 import timber.log.Timber
 
@@ -18,10 +20,13 @@ abstract class BasePresenter<View : BaseView>: BaseInterfacePresenter<View> {
         return this.view!!
     }
 
-    fun getContext(): Context {
+    fun getContext(): Context? {
         this.isViewValid()
 
-        return this.view!!.getContext()
+        return when (this.view) {
+            is Fragment -> (this.view as Fragment).context
+            else -> (this.view as AppCompatActivity).applicationContext
+        }
     }
 
     private fun isViewValid(): Boolean {

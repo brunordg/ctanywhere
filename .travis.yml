@@ -21,3 +21,10 @@ deploy:
   skip_cleanup: true
   on:
     tags: true
+
+notifications:
+  email:
+    recipients:
+      - rodrigues.brodrigues@gmail.com
+    on_success: always
+    on_failure: always
