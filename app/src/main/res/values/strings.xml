@@ -8,4 +8,5 @@
     <string name="configuracao">Configuração</string>
     <string name="cancelar">Cancelar</string>
     <string name="ok">@android:string/ok</string>
+    <string name="contentdescription">contentDescription</string>
 </resources>

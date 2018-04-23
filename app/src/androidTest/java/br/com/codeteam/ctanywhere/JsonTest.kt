@@ -1,5 +1,6 @@
 package br.com.codeteam.ctanywhere
 
+import android.support.test.InstrumentationRegistry
 import android.support.test.filters.SmallTest
 import android.support.test.runner.AndroidJUnit4
 import br.com.codeteam.ctanywhere.utils.Json
@@ -20,6 +21,9 @@ import timber.log.Timber
 @RunWith(AndroidJUnit4::class)
 @SmallTest
 class JsonTest {
+
+    val context = InstrumentationRegistry.getTargetContext()
+
     @Before
     fun setup() {
         //Context appContext = InstrumentationRegistry.getTargetContext();
@@ -39,6 +43,7 @@ class JsonTest {
         val register = Register("ctanywhere")
 
         Timber.d("toJson: %s", Json.toJsonPretty(register))
+
     }
 
     @Test
