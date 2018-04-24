@@ -20,11 +20,11 @@ abstract class BasePresenter<View : BaseView>: BaseInterfacePresenter<View> {
         return this.view!!
     }
 
-    fun getContext(): Context? {
+    fun getContext(): Context {
         this.isViewValid()
 
         return when (this.view) {
-            is Fragment -> (this.view as Fragment).context
+            is Fragment -> (this.view as Fragment).requireContext()
             else -> (this.view as AppCompatActivity).applicationContext
         }
     }
