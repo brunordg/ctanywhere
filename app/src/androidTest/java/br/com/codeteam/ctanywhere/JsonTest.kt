@@ -55,6 +55,7 @@ class JsonTest {
         assertEquals(register.toString(), Register("ctanywhere").toString())
     }
 
+
     inner class Register(var name: String?) {
 
         override fun toString(): String {
