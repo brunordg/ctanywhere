@@ -51,19 +51,10 @@ abstract class BaseFragment : Fragment(), BaseView {
      *          show()
      *      }
      */
-    fun showAlert(context: Context, title: String, message: String) {
+    fun showAlert(context: Context, title: String, message: String, dialogBuilder: AlertDialog.Builder.() -> Unit) {
         with(AlertDialog.Builder(context)) {
             setTitle(title)
             setMessage(message)
-        }
+        }.dialogBuilder()
     }
-
-    fun AlertDialog.Builder.positiveButton(name: String = "OK", clickListener: (which: Int) -> Any = {}) {
-        setPositiveButton(name, { _, which -> clickListener(which) })
-    }
-
-    fun AlertDialog.Builder.negativeButton(name: String = "Cancelar", clickListener: (which: Int) -> Any = {}) {
-        setNegativeButton(name, { _, which -> clickListener(which) })
-    }
-
 }

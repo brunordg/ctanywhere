@@ -77,19 +77,11 @@ abstract class BaseActivity : AppCompatActivity(), BaseView {
      *          show()
      *      }
      */
-    fun showAlert(context: Context, title: String, message: String) {
+    fun showAlert(context: Context, title: String, message: String, dialogBuilder: AlertDialog.Builder.() -> Unit) {
         with(AlertDialog.Builder(context)) {
             setTitle(title)
             setMessage(message)
-        }
-    }
-
-    fun AlertDialog.Builder.positiveButton(name: String = "OK", clickListener: (which: Int) -> Any = {}) {
-        setPositiveButton(name, { _, which -> clickListener(which) })
-    }
-
-    fun AlertDialog.Builder.negativeButton(name: String = "Cancelar", clickListener: (which: Int) -> Any = {}) {
-        setNegativeButton(name, { _, which -> clickListener(which) })
+        }.dialogBuilder()
     }
 
     fun getStatusBarHeight(): Int {
