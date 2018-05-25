@@ -26,3 +26,4 @@ fun Context.checkSelfPermissions(permission: String) = ContextCompat.checkSelfPe
 fun Context.getColorCompat(@ColorRes res: Int): Int = ContextCompat.getColor(this, res)
 
 fun Context.getDrawableCompat(@DrawableRes res: Int): Drawable = ContextCompat.getDrawable(this, res)!!
+

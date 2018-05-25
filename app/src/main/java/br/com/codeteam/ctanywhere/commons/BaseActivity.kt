@@ -81,6 +81,7 @@ abstract class BaseActivity : AppCompatActivity(), BaseView {
         with(AlertDialog.Builder(context)) {
             setTitle(title)
             setMessage(message)
+            setCancelable(false)
         }.dialogBuilder()
     }
 
