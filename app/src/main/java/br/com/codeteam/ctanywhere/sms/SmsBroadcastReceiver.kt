@@ -41,13 +41,11 @@ class SmsBroadcastReceiver : BroadcastReceiver() {
         var smsListener: ArrayList<SmsListener> = ArrayList()
 
         @JvmStatic
-        fun addListenerSms(listener: SmsListener) {
-            smsListener.add(listener)
-        }
+        fun addListenerSms(listener: SmsListener) = smsListener.add(listener)
 
         @JvmStatic
         fun removeAllListener() {
-            smsListener.clear()
+            if (smsListener.isNotEmpty()) smsListener.clear()
         }
     }
 }
