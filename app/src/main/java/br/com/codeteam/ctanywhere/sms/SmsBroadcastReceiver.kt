@@ -44,5 +44,10 @@ class SmsBroadcastReceiver : BroadcastReceiver() {
         fun addListenerSms(listener: SmsListener) {
             smsListener.add(listener)
         }
+
+        @JvmStatic
+        fun removeAllListener() {
+            smsListener.clear()
+        }
     }
 }
