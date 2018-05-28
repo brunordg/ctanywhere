@@ -3,44 +3,44 @@ package br.com.codeteam.ctanywhere.sms
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
+import android.os.Build
 import android.telephony.SmsMessage
 
 
 /**
  * Created by Bruno Rodrigues e Rodrigues on 25/05/2018.
  */
-class SmsBroadcastReceiver() : BroadcastReceiver() {
+class SmsBroadcastReceiver : BroadcastReceiver() {
 
-    @Suppress("DEPRECATION")
     override fun onReceive(context: Context?, intent: Intent?) {
-        val data = intent?.extras
+        val pdus = intent?.extras?.get("pdus") as Array<*>
+        val format = intent.extras.getString("format")
+        var text = ""
 
-        val pdus = arrayListOf(data?.get("pdus")!!)
+        for (pdu in pdus) {
+            val smsMsg = getSmsMsg(pdu as ByteArray?, format)
+            val subMsg = smsMsg?.displayMessageBody
 
-        for (i in pdus.indices) {
-            val smsMessage = SmsMessage.createFromPdu(pdus[i] as ByteArray)
+            subMsg?.let { text = "$text$it" }
+        }
 
-            val sender = smsMessage.displayOriginatingAddress
+        for (smsListener in smsListener) {
+            smsListener.messageReceived(text)
+        }
+    }
 
-            if (sender == "GADGETSAINT") {
-
-                val messageBody = smsMessage.messageBody
-
-                //Pass the message text to interface
-                if (smsListener.isEmpty()) {
-                    throw RuntimeException("Necessário adicionar um Listener")
-                }
-
-                for (listener in smsListener) {
-                    listener.messageReceived(messageBody)
-                }
-            }
+    private fun getSmsMsg(pdu: ByteArray?, format: String?): SmsMessage? {
+        @Suppress("DEPRECATION")
+        return when {
+            Build.VERSION.SDK_INT >= Build.VERSION_CODES.M -> SmsMessage.createFromPdu(pdu, format)
+            else -> SmsMessage.createFromPdu(pdu)
         }
     }
 
     companion object {
         var smsListener: ArrayList<SmsListener> = ArrayList()
 
+        @JvmStatic
         fun addListenerSms(listener: SmsListener) {
             smsListener.add(listener)
         }
