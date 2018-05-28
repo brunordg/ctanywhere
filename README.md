@@ -24,7 +24,7 @@ allprojects {
 
 ```
 dependencies {
-	compile 'com.github.brunordg:ctanywhere:1.0.64'
+	compile 'com.github.brunordg:ctanywhere:1.0+'
 }
 ```
 
