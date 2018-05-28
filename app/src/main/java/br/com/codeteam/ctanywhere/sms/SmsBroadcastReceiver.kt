@@ -16,16 +16,18 @@ class SmsBroadcastReceiver : BroadcastReceiver() {
         val pdus = intent?.extras?.get("pdus") as Array<*>
         val format = intent.extras.getString("format")
         var text = ""
+        var from = ""
 
         for (pdu in pdus) {
             val smsMsg = getSmsMsg(pdu as ByteArray?, format)
             val subMsg = smsMsg?.displayMessageBody
 
+            smsMsg?.let { from = smsMsg.displayOriginatingAddress }
             subMsg?.let { text = "$text$it" }
         }
 
         for (smsListener in smsListener) {
-            smsListener.messageReceived(text)
+            smsListener.messageReceived(text, from)
         }
     }
 
