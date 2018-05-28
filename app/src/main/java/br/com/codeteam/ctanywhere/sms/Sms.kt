@@ -10,7 +10,7 @@ import br.com.codeteam.ctanywhere.view.ext.positiveButton
 /**
  * Created by Bruno Rodrigues e Rodrigues on 25/05/2018.
  */
-class Sms {
+class SmsPermission {
 
     companion object {
         const val SMS_PERMISSION_CODE = 44
