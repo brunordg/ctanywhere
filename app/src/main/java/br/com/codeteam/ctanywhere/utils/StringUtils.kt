@@ -11,4 +11,8 @@ object StringUtils {
     fun isBlankOrNull(value: String?): Boolean {
         return null == value || "" == value.trim()
     }
+
+    fun onlyNumber(value: String): String {
+        return value.replace("\\D+".toRegex(), "")
+    }
 }
