@@ -1,5 +1,6 @@
 package br.com.codeteam.ctanywhere.view.ext
 
+import android.content.Context
 import android.support.v7.app.AlertDialog
 
 /**
@@ -15,4 +16,10 @@ fun AlertDialog.Builder.negativeButton(name: String = "Cancelar", clickListener:
 
 fun AlertDialog.Builder.neutralButton(name: String = "Fechar", clickListener: (which: Int) -> Any = {}) {
     setNeutralButton(name, { _, which -> clickListener(which) })
+}
+
+fun AlertDialog.changeColorButton(colorId: Int, context: Context) {
+    getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(context.getColorCompat(colorId))
+    getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(context.getColorCompat(colorId))
+    getButton(AlertDialog.BUTTON_NEUTRAL).setTextColor(context.getColorCompat(colorId))
 }
