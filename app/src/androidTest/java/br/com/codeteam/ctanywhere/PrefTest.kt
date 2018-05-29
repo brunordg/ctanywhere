@@ -6,6 +6,7 @@ import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
 import android.util.Log
 import br.com.codeteam.ctanywhere.preferences.Pref
+import br.com.codeteam.ctanywhere.preferences.PrefCrypto
 import junit.framework.Assert.assertNull
 import junit.framework.Assert.assertTrue
 import org.junit.Assert.assertEquals
@@ -21,47 +22,69 @@ import org.junit.runner.RunWith
 @RunWith(AndroidJUnit4::class)
 class PrefTest {
 
-    private var appContext: Context? = null
+    lateinit var context: Context
 
     @Before
     fun setup() {
-        this.appContext = InstrumentationRegistry.getTargetContext()
+        context = InstrumentationRegistry.getTargetContext()
+
+        PrefCrypto.init(context)
     }
 
     @Test
     fun write() {
-        Pref.write(KEY_NAME, NAME, this.appContext!!)
-        assertEquals(Pref.read(KEY_NAME, this.appContext!!), NAME)
+        Pref.write(KEY_NAME, NAME, context)
+        assertEquals(Pref.read(KEY_NAME, context), NAME)
 
-        Pref.write(KEY_TRUE, TRUE, this.appContext!!)
-        assertTrue(Pref.read(KEY_TRUE, this.appContext!!))
+        Pref.write(KEY_TRUE, TRUE, context)
+        assertTrue(Pref.read(KEY_TRUE, context))
+
+        PrefCrypto.write(KEY_NAME, NAME)
+        assertEquals(PrefCrypto.get(KEY_NAME), NAME)
+
+        PrefCrypto.write(KEY_TRUE, TRUE)
+        assertTrue(PrefCrypto.get(KEY_TRUE))
     }
 
     @Test
     fun clear() {
         this.write()
 
-        Pref.clearAll(this.appContext!!)
-        assertNull(Pref.read(KEY_NAME, this.appContext!!))
+        Pref.clearAll(context)
+        assertNull(Pref.read(KEY_NAME, context))
+
+        PrefCrypto.deleteAll()
+        assertNull(PrefCrypto.get(NAME))
     }
 
     @Test
     fun registerListener() {
         this.write()
 
-        Pref.registerPreferenceChanged(this.appContext!!, SharedPreferences.OnSharedPreferenceChangeListener { sharedPreferences, key ->
-            Log.d(TAG, "onSharedPreferenceChanged: " + Pref.read<Any>(key, appContext!!))
-            assertEquals(Pref.read(key, appContext!!), NAME_CHANGE)
+        Pref.registerPreferenceChanged(context, SharedPreferences.OnSharedPreferenceChangeListener { sharedPreferences, key ->
+            Log.d(TAG, "onSharedPreferenceChanged: " + Pref.read<Any>(key, context))
+            assertEquals(Pref.read(key, context), NAME_CHANGE)
         })
 
-        Pref.write(KEY_NAME, NAME_CHANGE, this.appContext!!)
+        Pref.write(KEY_NAME, NAME_CHANGE, context)
     }
 
     @Test
-    fun compare() {
-        Pref.write(KEY_NAME, NAME, this.appContext!!)
+    fun deletePrefCrypto() {
+        PrefCrypto.write(KEY_NAME, NAME)
+        PrefCrypto.delete(KEY_NAME)
 
-        assertEquals(Pref.equals(KEY_NAME, NAME, appContext!!), true)
+        assertNull(PrefCrypto.get(KEY_NAME))
+    }
+
+    @Test
+    fun countPrefCrypto() {
+        PrefCrypto.deleteAll()
+        PrefCrypto.write(KEY_NAME, NAME)
+        assertEquals(PrefCrypto.count(), 1)
+
+        PrefCrypto.deleteAll()
+        assertEquals(PrefCrypto.count(), 0)
     }
 
     companion object {
