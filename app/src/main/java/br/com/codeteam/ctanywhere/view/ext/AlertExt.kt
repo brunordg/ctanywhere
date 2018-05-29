@@ -12,3 +12,7 @@ fun AlertDialog.Builder.positiveButton(name: String = "OK", clickListener: (whic
 fun AlertDialog.Builder.negativeButton(name: String = "Cancelar", clickListener: (which: Int) -> Any = {}) {
     setNegativeButton(name, { _, which -> clickListener(which) })
 }
+
+fun AlertDialog.Builder.neutralButton(name: String = "Fechar", clickListener: (which: Int) -> Any = {}) {
+    setNeutralButton(name, { _, which -> clickListener(which) })
+}
