@@ -11,7 +11,6 @@ import android.widget.TextView
 import android.widget.Toast
 import br.com.codeteam.ctanywhere.R
 
-
 class Toast(context: Context?) : Toast(context) {
 
     companion object {
