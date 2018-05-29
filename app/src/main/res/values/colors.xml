@@ -10,4 +10,5 @@
     <color name="SnackbarRed">#E84242</color>
     <color name="SnackbarGreen">#00944C</color>
     <color name="SnackbarBlue">#375697</color>
+    <color name="SnackbarDefault">#323232</color>
 </resources>

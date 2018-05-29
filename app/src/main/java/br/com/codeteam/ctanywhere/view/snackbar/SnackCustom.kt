@@ -2,6 +2,7 @@ package br.com.codeteam.ctanywhere.view.snackbar
 
 import android.support.design.widget.Snackbar
 import android.support.v4.content.ContextCompat
+import android.support.v4.view.ViewCompat
 import android.support.v7.app.AppCompatActivity
 import android.text.SpannableStringBuilder
 import android.text.Spanned
@@ -9,13 +10,13 @@ import android.text.style.ForegroundColorSpan
 import android.text.style.ImageSpan
 import android.view.ViewGroup
 import br.com.codeteam.ctanywhere.R
+import br.com.codeteam.ctanywhere.view.ext.getDrawableCompat
 
 class SnackCustom(val activity: AppCompatActivity) {
 
     private val sb: SpannableStringBuilder? = null
 
     private val span: ImageSpan? = null
-
 
     fun buildFormat(messageId: Int, type: Type): Snackbar {
         return build(this.activity.getString(messageId), type)
@@ -42,15 +43,23 @@ class SnackCustom(val activity: AppCompatActivity) {
 
         val snack = Snackbar.make(viewGroup, snackText, Snackbar.LENGTH_LONG)
 
-        val snackViewSuccess = snack.view
+        val snackView = snack.view
 
-        snackViewSuccess.setBackgroundColor(ContextCompat.getColor(this.activity, R.color.SnackbarGreen))
+        val params = snackView.layoutParams as ViewGroup.MarginLayoutParams
+        params.setMargins(12, 12, 12, 12)
+
+        snackView.setBackgroundColor(ContextCompat.getColor(this.activity, R.color.SnackbarGreen))
+        snackView.layoutParams = params
+        snackView.background = activity.getDrawableCompat(R.drawable.bg_snackbar)
+
+        ViewCompat.setElevation(snackView, 6f)
 
         when (type) {
-            Type.WARN -> snackViewSuccess.setBackgroundColor(ContextCompat.getColor(this.activity, R.color.SnackbarYellow))
-            Type.ERROR -> snackViewSuccess.setBackgroundColor(ContextCompat.getColor(this.activity, R.color.SnackbarRed))
-            Type.SUCCESS -> snackViewSuccess.setBackgroundColor(ContextCompat.getColor(this.activity, R.color.SnackbarGreen))
-            else -> snackViewSuccess.setBackgroundColor(ContextCompat.getColor(this.activity, R.color.SnackbarBlue))
+            Type.WARN -> snackView.setBackgroundColor(ContextCompat.getColor(this.activity, R.color.SnackbarYellow))
+            Type.ERROR -> snackView.setBackgroundColor(ContextCompat.getColor(this.activity, R.color.SnackbarRed))
+            Type.SUCCESS -> snackView.setBackgroundColor(ContextCompat.getColor(this.activity, R.color.SnackbarGreen))
+            Type.INFO -> snackView.setBackgroundColor(ContextCompat.getColor(this.activity, R.color.SnackbarBlue))
+            else -> snackView.setBackgroundColor(ContextCompat.getColor(this.activity, R.color.SnackbarDefault))
         }
 
         return snack
@@ -60,6 +69,7 @@ class SnackCustom(val activity: AppCompatActivity) {
         WARN("WARN"),
         ERROR("ERROR"),
         INFO("INFO"),
-        SUCCESS("SUCCESS")
+        SUCCESS("SUCCESS"),
+        DEFAULT("DEFAULT")
     }
 }
