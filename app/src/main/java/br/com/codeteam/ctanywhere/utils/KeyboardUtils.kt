@@ -1,6 +1,6 @@
 package br.com.codeteam.ctanywhere.utils
 
-import android.app.Activity
+import android.support.v7.app.AppCompatActivity
 import android.content.Context
 import android.view.View
 import android.view.inputmethod.InputMethodManager
@@ -11,12 +11,12 @@ import android.widget.EditText
  * Classe para auxiliar as funções do teclado
  */
 object KeyboardUtils {
-    fun hideSoftInput(activity: Activity) {
+    fun hideSoftInput(activity: AppCompatActivity) {
         var view = activity.currentFocus
 
         if (null == view) view = View(activity)
 
-        val iml = activity.getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
+        val iml = activity.getSystemService(AppCompatActivity.INPUT_METHOD_SERVICE) as InputMethodManager
 
         iml.hideSoftInputFromInputMethod(view.windowToken, 0)
     }

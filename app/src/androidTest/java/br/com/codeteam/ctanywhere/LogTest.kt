@@ -15,7 +15,7 @@ import org.junit.runner.RunWith
 @SmallTest
 class LogTest {
 
-    val context = InstrumentationRegistry.getTargetContext()
+    //val context = InstrumentationRegistry.getTargetContext()
 
     @Before
     fun setup() {

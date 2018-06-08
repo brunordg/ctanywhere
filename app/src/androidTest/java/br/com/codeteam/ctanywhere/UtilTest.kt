@@ -16,7 +16,7 @@ import org.junit.runner.RunWith
 @SmallTest
 class UtilTest {
 
-    val context = InstrumentationRegistry.getTargetContext()
+    //val context = InstrumentationRegistry.getTargetContext()
 
     @Before
     fun setup() {

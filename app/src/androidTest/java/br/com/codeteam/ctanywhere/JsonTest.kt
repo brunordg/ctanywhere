@@ -22,7 +22,7 @@ import timber.log.Timber
 @SmallTest
 class JsonTest {
 
-    val context = InstrumentationRegistry.getTargetContext()
+    //val context = InstrumentationRegistry.getTargetContext()
 
     @Before
     fun setup() {
