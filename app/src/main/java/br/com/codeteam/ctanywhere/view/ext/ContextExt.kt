@@ -27,3 +27,5 @@ fun Context.getColorCompat(@ColorRes res: Int): Int = ContextCompat.getColor(thi
 
 fun Context.getDrawableCompat(@DrawableRes res: Int): Drawable = ContextCompat.getDrawable(this, res)!!
 
+
+
