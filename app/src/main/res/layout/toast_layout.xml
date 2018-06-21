@@ -43,8 +43,5 @@
         android:layout_alignEnd="@+id/toast_type"
         android:layout_alignParentTop="true"
         android:layout_alignRight="@+id/toast_type"
-        android:contentDescription="@string/contentdescription"
-        app:srcCompat="@drawable/androidicon" />
-
-
+        android:contentDescription="@string/contentdescription" />
 </RelativeLayout>
