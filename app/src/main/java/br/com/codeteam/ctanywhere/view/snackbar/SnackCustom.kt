@@ -1,16 +1,16 @@
 package br.com.codeteam.ctanywhere.view.snackbar
 
-import android.support.design.widget.Snackbar
-import android.support.v4.content.ContextCompat
-import android.support.v4.view.ViewCompat
-import android.support.v7.app.AppCompatActivity
 import android.text.SpannableStringBuilder
 import android.text.Spanned
 import android.text.style.ForegroundColorSpan
 import android.text.style.ImageSpan
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
+import androidx.core.view.ViewCompat
 import br.com.codeteam.ctanywhere.R
 import br.com.codeteam.ctanywhere.view.ext.getDrawableCompat
+import com.google.android.material.snackbar.Snackbar
 
 class SnackCustom(val activity: AppCompatActivity) {
 

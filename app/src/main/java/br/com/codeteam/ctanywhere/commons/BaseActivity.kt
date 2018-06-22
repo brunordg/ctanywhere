@@ -5,14 +5,14 @@ import android.content.Context
 import android.graphics.Color
 import android.graphics.Typeface
 import android.os.Build
-import android.support.annotation.RequiresApi
-import android.support.annotation.StringRes
-import android.support.v4.app.FragmentTransaction
-import android.support.v7.app.AlertDialog
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.AppCompatDrawableManager
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.annotation.RequiresApi
+import androidx.annotation.StringRes
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.AppCompatDrawableManager
+import androidx.fragment.app.FragmentTransaction
 import br.com.codeteam.ctanywhere.view.snackbar.SnackCustom
 
 abstract class BaseActivity : AppCompatActivity(), BaseView {

@@ -1,8 +1,8 @@
 package br.com.codeteam.ctanywhere.commons
 
 import android.content.Context
-import android.support.v4.app.Fragment
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import br.com.codeteam.ctanywhere.exception.CTRuntimeException
 import timber.log.Timber
 

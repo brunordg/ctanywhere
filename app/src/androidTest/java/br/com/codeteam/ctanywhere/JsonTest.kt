@@ -1,7 +1,7 @@
 package br.com.codeteam.ctanywhere
 
-import android.support.test.filters.SmallTest
-import android.support.test.runner.AndroidJUnit4
+import androidx.test.filters.SmallTest
+import androidx.test.runner.AndroidJUnit4
 import br.com.codeteam.ctanywhere.utils.Json
 import org.junit.Assert.assertEquals
 import org.junit.Before

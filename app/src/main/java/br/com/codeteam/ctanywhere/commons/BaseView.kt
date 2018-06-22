@@ -1,8 +1,8 @@
 package br.com.codeteam.ctanywhere.commons
 
-import android.support.annotation.StringRes
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.annotation.StringRes
 import br.com.codeteam.ctanywhere.view.snackbar.SnackCustom
 
 interface BaseView {

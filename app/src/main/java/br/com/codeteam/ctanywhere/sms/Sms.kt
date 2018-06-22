@@ -2,8 +2,8 @@ package br.com.codeteam.ctanywhere.sms
 
 import android.Manifest
 import android.content.Context
-import android.support.v4.app.ActivityCompat
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
 import br.com.codeteam.ctanywhere.view.ext.hasPermissions
 
 /**
