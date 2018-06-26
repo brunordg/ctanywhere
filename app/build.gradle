@@ -6,7 +6,7 @@ android {
     compileSdkVersion 28
     buildToolsVersion "28.0.0"
     defaultConfig {
-        minSdkVersion 16
+        minSdkVersion 17
         targetSdkVersion 28
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
@@ -28,25 +28,27 @@ dependencies {
     androidTestImplementation('androidx.test.espresso:espresso-core:3.1.0-alpha3', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
+
+    //Test
+    testImplementation testingDependencies.junit
     //Android
-    testImplementation 'junit:junit:4.12'
-    implementation "androidx.appcompat:appcompat:$support_version"
-    implementation "androidx.annotation:annotation:$support_version"
-    implementation "com.google.android.material:material:$support_version"
-    implementation "com.google.code.gson:gson:$gson_version"
+    implementation others.kotlin
+    implementation supportDependencies.appcompat
+    implementation supportDependencies.annotation
+    implementation supportDependencies.material
+    implementation others.gson
     //Architecture
-    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
-    implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version"
-    kapt "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
-
+    implementation architecture.extensions
+    implementation architecture.viewmodel
+    kapt architecture.compile
     //RxJava
-    implementation 'io.reactivex.rxjava2:rxjava:2.1.7'
-
+    implementation reactiveDependencies.rxjava
     //Others
-    implementation 'com.googlecode.libphonenumber:libphonenumber:8.5.2'
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'com.orhanobut:hawk:2.0.1'
-    implementation 'com.jakewharton.timber:timber:4.6.0'
+    implementation others.libphone
+    implementation others.timber
+    implementation others.hawk
+    implementation squareDependencies.picasso
+
 }
 repositories {
     mavenCentral()
