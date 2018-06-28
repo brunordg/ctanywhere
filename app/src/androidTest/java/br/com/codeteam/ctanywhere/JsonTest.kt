@@ -3,11 +3,11 @@ package br.com.codeteam.ctanywhere
 import androidx.test.filters.SmallTest
 import androidx.test.runner.AndroidJUnit4
 import br.com.codeteam.ctanywhere.utils.Json
+import br.com.codeteam.ctanywhere.view.ext.logDebug
 import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
-import timber.log.Timber
 
 /**
  * Teste unitário para testar a classe de preferences
@@ -32,7 +32,7 @@ class JsonTest {
     fun toJson() {
         val register = Register("ctanywhere")
 
-        Timber.d("toJson: %s", Json.toJson(register))
+        logDebug("toJson: ${Json.toJson(register)}")
 
         assertEquals(Json.toJson(register), "{\"name\":\"ctanywhere\"}")
     }
@@ -41,15 +41,14 @@ class JsonTest {
     fun toJsonPretty() {
         val register = Register("ctanywhere")
 
-        Timber.d("toJson: %s", Json.toJsonPretty(register))
-
+        logDebug("toJson: ${Json.toJsonPretty(register)}")
     }
 
     @Test
     fun toObject() {
         val register = Json.fromJson("{\"name\":\"ctanywhere\"}", Register::class.java)
 
-        Timber.d("toObject: %s", register.name)
+        logDebug("toObject: ${register.name}")
 
         assertEquals(register.toString(), Register("ctanywhere").toString())
     }

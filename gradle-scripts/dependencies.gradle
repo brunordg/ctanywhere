@@ -23,7 +23,6 @@ ext {
     picassoVersion = '2.71828'
 
     squareDependencies = [
-
             retrofit       : "com.squareup.retrofit2:retrofit:${squareVersion}",
             adapter_rx_java: "com.squareup.retrofit2:adapter-rxjava2:${squareVersion}",
             converter_gson : "com.squareup.retrofit2:converter-gson:${squareVersion}",
