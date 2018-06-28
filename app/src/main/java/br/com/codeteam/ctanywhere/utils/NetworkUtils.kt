@@ -1,11 +1,14 @@
 package br.com.codeteam.ctanywhere.utils
 
+import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.net.ConnectivityManager
+import androidx.annotation.RequiresPermission
 import androidx.appcompat.app.AlertDialog
 import br.com.codeteam.ctanywhere.R
+
 
 /**
  * Classe para ajudar o tratamento de operações de Rede
@@ -51,6 +54,13 @@ object NetworkUtils {
         }
 
         return false
+    }
+
+    @RequiresPermission(Manifest.permission.ACCESS_NETWORK_STATE)
+    fun isWifi(context: Context): Boolean {
+        val connMgr = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val networkInfo = connMgr.getNetworkInfo(ConnectivityManager.TYPE_WIFI)
+        return networkInfo.isConnected
     }
 
     /**
