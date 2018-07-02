@@ -45,4 +45,9 @@ class LogTest {
     fun logW() {
         logWarn("Testando o log Warn")
     }
+
+    @Test
+    fun logSelf() {
+        "Testando o Log Self".logSelfDebug()
+    }
 }
