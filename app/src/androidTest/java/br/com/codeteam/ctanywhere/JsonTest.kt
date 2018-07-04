@@ -4,6 +4,7 @@ import androidx.test.filters.SmallTest
 import androidx.test.runner.AndroidJUnit4
 import br.com.codeteam.ctanywhere.utils.Json
 import br.com.codeteam.ctanywhere.view.ext.logDebug
+import br.com.codeteam.ctanywhere.view.ext.toJson
 import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
@@ -53,14 +54,14 @@ class JsonTest {
         assertEquals(register.toString(), Register("ctanywhere").toString())
     }
 
+    @Test
+    fun toJsonExt() {
+        assertEquals("{\"name\":\"ctanywhere\"}", Register("ctanywhere").toJson())
+    }
 
     inner class Register(var name: String?) {
-
         override fun toString(): String {
-            val sb = StringBuilder("Register{")
-            sb.append("name='").append(name).append('\'')
-            sb.append('}')
-            return sb.toString()
+            return toJson()
         }
     }
 }
