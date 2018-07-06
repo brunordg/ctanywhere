@@ -75,6 +75,27 @@ object Pref {
     }
 
     /**
+     * Lê as SharedPreferences privadas
+     * @param key
+     * *
+     * @param context
+     * *
+     * @param <T>
+     * *
+     * @return Retorna o objeto solicitado
+    </T> */
+    fun <T> read(key: String, defValue: Any, context: Context): T {
+        return when (defValue) {
+            is Boolean -> context.getSharedPreferences(context.packageName + FILE, Context.MODE_PRIVATE).getBoolean(key, defValue) as T
+            is Float -> context.getSharedPreferences(context.packageName + FILE, Context.MODE_PRIVATE).getFloat(key, defValue) as T
+            is Int -> context.getSharedPreferences(context.packageName + FILE, Context.MODE_PRIVATE).getInt(key, defValue) as T
+            is Long -> context.getSharedPreferences(context.packageName + FILE, Context.MODE_PRIVATE).getLong(key, defValue) as T
+            is String -> context.getSharedPreferences(context.packageName + FILE, Context.MODE_PRIVATE).getString(key, defValue) as T
+            else -> throw RuntimeException("Valor da chave não encontrado (" + key.javaClass.simpleName + ") não suportado, os tipos suportados são {Boolean, Float, Integer, Long, String, Set<String>}")
+        }
+    }
+
+    /**
      * Limpa todos as SharedPreferences do projeto
      * @param context
      */
