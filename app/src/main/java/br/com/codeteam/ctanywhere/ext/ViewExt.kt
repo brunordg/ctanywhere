@@ -1,4 +1,4 @@
-package br.com.codeteam.ctanywhere.view.ext
+package br.com.codeteam.ctanywhere.ext
 
 import android.content.ContextWrapper
 import android.view.View

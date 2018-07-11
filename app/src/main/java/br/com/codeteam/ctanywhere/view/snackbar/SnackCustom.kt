@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import br.com.codeteam.ctanywhere.R
-import br.com.codeteam.ctanywhere.view.ext.getDrawableCompat
+import br.com.codeteam.ctanywhere.ext.getDrawableCompat
 import com.google.android.material.snackbar.Snackbar
 
 class SnackCustom(val activity: AppCompatActivity) {

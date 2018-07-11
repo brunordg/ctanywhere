@@ -1,4 +1,4 @@
-package br.com.codeteam.ctanywhere.view.ext
+package br.com.codeteam.ctanywhere.ext
 
 import android.content.Context
 import androidx.appcompat.app.AlertDialog

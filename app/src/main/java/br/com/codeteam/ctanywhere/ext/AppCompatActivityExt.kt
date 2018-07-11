@@ -1,4 +1,4 @@
-package br.com.codeteam.ctanywhere.view.ext
+package br.com.codeteam.ctanywhere.ext
 
 import androidx.annotation.IdRes
 import androidx.appcompat.app.ActionBar
