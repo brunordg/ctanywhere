@@ -1,8 +1,8 @@
 package br.com.codeteam.ctanywhere.view.ext
 
 import android.content.ContextWrapper
-import android.support.v7.app.AppCompatActivity
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 
 @Suppress("unused")
 fun View.getParentActivity(): AppCompatActivity? {

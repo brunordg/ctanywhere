@@ -9,6 +9,6 @@ interface BaseView {
     fun showSnackBar(message: String, type: SnackCustom.Type)
     fun showSnackBar(@StringRes id: Int, type: SnackCustom.Type)
     fun transparentStatusBar()
-    fun TextView.setFont(fontPath : String)
+    fun TextView.setFont(fontPath: String)
     fun ImageView.imageBackground(drawable: Int)
 }

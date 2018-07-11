@@ -19,7 +19,7 @@ class PlaygroundTest {
 
     @Test
     fun callFun() {
-        this.someMethod(10) {println("Result $it")}
+        this.someMethod(10) { println("Result $it") }
     }
 
     inline fun someMethod(a: Int, func: (Int) -> Unit): Int {

@@ -24,7 +24,6 @@ class BlurEffectUtils(val context: Context, var radius: Int) {
     }
 
 
-
     fun transform(source: Bitmap): Bitmap {
         val blurredBitmap = Bitmap.createBitmap(source)
 
@@ -46,11 +45,11 @@ class BlurEffectUtils(val context: Context, var radius: Int) {
     }
 
     private fun defineRadius(radius: Int): Int {
-       return when {
-           radius < LOW_LIMIT -> LOW_LIMIT
-           radius > UP_LIMIT -> UP_LIMIT
-           else -> radius
-       }
+        return when {
+            radius < LOW_LIMIT -> LOW_LIMIT
+            radius > UP_LIMIT -> UP_LIMIT
+            else -> radius
+        }
     }
 
 

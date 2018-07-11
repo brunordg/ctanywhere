@@ -6,7 +6,7 @@ import androidx.fragment.app.Fragment
 import br.com.codeteam.ctanywhere.exception.CTRuntimeException
 import timber.log.Timber
 
-abstract class BasePresenter<View : BaseView>: BaseInterfacePresenter<View> {
+abstract class BasePresenter<View : BaseView> : BaseInterfacePresenter<View> {
 
     private var view: View? = null
 

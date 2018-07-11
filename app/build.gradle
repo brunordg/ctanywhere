@@ -36,17 +36,15 @@ dependencies {
     implementation supportDependencies.appcompat
     implementation supportDependencies.annotation
     implementation supportDependencies.material
-    implementation others.gson
     //Architecture
     implementation architecture.extensions
-    implementation architecture.viewmodel
-    kapt architecture.compile
     //RxJava
     implementation reactiveDependencies.rxjava
     //Others
     implementation others.libphone
     implementation others.timber
     implementation others.hawk
+    implementation others.gson
     implementation squareDependencies.picasso
 
 }

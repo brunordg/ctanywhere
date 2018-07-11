@@ -5,7 +5,7 @@ import android.content.Context
 import android.content.Intent
 import br.com.codeteam.ctanywhere.utils.NetworkUtils
 
-class NetworkMonitoring: BroadcastReceiver() {
+class NetworkMonitoring : BroadcastReceiver() {
 
     var list: ArrayList<NetworkListener> = ArrayList()
 
