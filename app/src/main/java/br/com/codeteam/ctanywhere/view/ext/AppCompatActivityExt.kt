@@ -1,18 +1,19 @@
 package br.com.codeteam.ctanywhere.view.ext
 
-import androidx.annotation.IdRes
-import androidx.appcompat.app.ActionBar
-import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
+import android.arch.lifecycle.ViewModel
+import android.arch.lifecycle.ViewModelProvider
+import android.arch.lifecycle.ViewModelProviders
+import android.support.annotation.IdRes
+import android.support.v4.app.Fragment
+import android.support.v4.app.FragmentManager
+import android.support.v4.app.FragmentTransaction
+import android.support.v7.app.ActionBar
+import android.support.v7.app.AppCompatActivity
 
 /**
  * Configure the ActionBar
  */
+@Suppress("unused")
 fun AppCompatActivity.setupActionBar(@IdRes toolbarId: Int, action: ActionBar.() -> Unit) {
     setSupportActionBar(findViewById(toolbarId))
     supportActionBar?.run {
@@ -23,6 +24,7 @@ fun AppCompatActivity.setupActionBar(@IdRes toolbarId: Int, action: ActionBar.()
 /**
  * Replace Fragment
  */
+@Suppress("unused")
 fun AppCompatActivity.replaceFragmentInActivity(fragment: Fragment, frameId: Int) {
     supportFragmentManager.transact {
         replace(frameId, fragment)
@@ -32,6 +34,7 @@ fun AppCompatActivity.replaceFragmentInActivity(fragment: Fragment, frameId: Int
 /**
  * Add Fragment into activity
  */
+@Suppress("unused")
 fun AppCompatActivity.addFragmentToActivity(fragment: Fragment, tag: String) {
     supportFragmentManager.transact {
         add(fragment, tag)
