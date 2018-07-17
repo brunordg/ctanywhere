@@ -1,10 +1,12 @@
-package br.com.codeteam.ctanywhere.commons
+package br.com.codeteam.ctanywhere.base
 
 import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Color
 import android.graphics.Typeface
 import android.os.Build
+import android.os.Bundle
+import android.os.PersistableBundle
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.RequiresApi
@@ -15,7 +17,16 @@ import androidx.appcompat.widget.AppCompatDrawableManager
 import androidx.fragment.app.FragmentTransaction
 import br.com.codeteam.ctanywhere.view.snackbar.SnackCustom
 
-abstract class BaseActivity : AppCompatActivity(), BaseView {
+abstract class BaseActivity<P: BasePresenter<BaseView>> : AppCompatActivity(), BaseView {
+
+    lateinit var presenter: P
+
+    protected abstract fun instantiatePresenter(): P
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        this.instantiatePresenter()
+    }
 
     /**
      * Exibi o SnackBar Custom

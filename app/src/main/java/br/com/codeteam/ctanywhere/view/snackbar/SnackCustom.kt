@@ -12,7 +12,7 @@ import br.com.codeteam.ctanywhere.R
 import br.com.codeteam.ctanywhere.ext.getDrawableCompat
 import com.google.android.material.snackbar.Snackbar
 
-class SnackCustom(val activity: AppCompatActivity) {
+class SnackCustom(private val activity: AppCompatActivity) {
 
     private val sb: SpannableStringBuilder? = null
 

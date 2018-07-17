@@ -1,10 +1,11 @@
-package br.com.codeteam.ctanywhere.commons
+package br.com.codeteam.ctanywhere.base
 
 import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Color
 import android.graphics.Typeface
 import android.os.Build
+import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.RequiresApi
@@ -14,14 +15,23 @@ import androidx.appcompat.widget.AppCompatDrawableManager
 import androidx.fragment.app.Fragment
 import br.com.codeteam.ctanywhere.view.snackbar.SnackCustom
 
-abstract class BaseFragment : Fragment(), BaseView {
+abstract class BaseFragment<P: BasePresenter<BaseView>> : Fragment(), BaseView {
+
+    lateinit var presenter: P
+
+    protected abstract fun instantiatePresenter(): P
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        this.instantiatePresenter()
+    }
 
     override fun showSnackBar(@StringRes id: Int, type: SnackCustom.Type) {
-        SnackCustom(activity as BaseActivity).build(id, type).show()
+        SnackCustom(activity as BaseActivity<*>).build(id, type).show()
     }
 
     override fun showSnackBar(message: String, type: SnackCustom.Type) {
-        SnackCustom(activity as BaseActivity).build(message, type).show()
+        SnackCustom(activity as BaseActivity<*>).build(message, type).show()
     }
 
     override fun TextView.setFont(fontPath: String) {
@@ -38,8 +48,8 @@ abstract class BaseFragment : Fragment(), BaseView {
         setImageDrawable(AppCompatDrawableManager.get().getDrawable(context, drawable))
     }
 
-    fun getBaseActivity(): BaseActivity {
-        return activity as BaseActivity
+    fun getBaseActivity(): BaseActivity<*> {
+        return activity as BaseActivity<*>
     }
 
     /**

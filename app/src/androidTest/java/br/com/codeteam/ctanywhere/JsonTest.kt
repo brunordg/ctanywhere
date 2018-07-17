@@ -2,6 +2,7 @@ package br.com.codeteam.ctanywhere
 
 import androidx.test.filters.SmallTest
 import androidx.test.runner.AndroidJUnit4
+import br.com.codeteam.ctanywhere.base.BaseModel
 import br.com.codeteam.ctanywhere.ext.logDebug
 import br.com.codeteam.ctanywhere.ext.toJson
 import br.com.codeteam.ctanywhere.utils.Json
