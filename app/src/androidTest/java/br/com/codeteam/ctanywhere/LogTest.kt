@@ -1,9 +1,8 @@
 package br.com.codeteam.ctanywhere
 
-import android.support.test.InstrumentationRegistry
-import android.support.test.filters.SmallTest
-import android.support.test.runner.AndroidJUnit4
-import br.com.codeteam.ctanywhere.view.ext.*
+import androidx.test.filters.SmallTest
+import androidx.test.runner.AndroidJUnit4
+import br.com.codeteam.ctanywhere.ext.*
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -45,5 +44,10 @@ class LogTest {
     @Test
     fun logW() {
         logWarn("Testando o log Warn")
+    }
+
+    @Test
+    fun logSelf() {
+        "Testando o Log Self".logSelfDebug()
     }
 }

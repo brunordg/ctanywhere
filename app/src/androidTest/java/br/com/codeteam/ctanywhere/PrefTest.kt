@@ -2,14 +2,12 @@ package br.com.codeteam.ctanywhere
 
 import android.content.Context
 import android.content.SharedPreferences
-import android.support.test.InstrumentationRegistry
-import android.support.test.runner.AndroidJUnit4
 import android.util.Log
+import androidx.test.InstrumentationRegistry
+import androidx.test.runner.AndroidJUnit4
 import br.com.codeteam.ctanywhere.preferences.Pref
 import br.com.codeteam.ctanywhere.preferences.PrefCrypto
-import junit.framework.Assert.assertNull
-import junit.framework.Assert.assertTrue
-import org.junit.Assert.assertEquals
+import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith

@@ -8,7 +8,7 @@ import android.webkit.WebResourceRequest
 import android.webkit.WebView
 import android.webkit.WebViewClient
 
-abstract class WebViewClient(private var timeout: Long = 30000): WebViewClient() {
+abstract class WebViewClient(private var timeout: Long = 30000) : WebViewClient() {
 
     private var isTimeout = true
 

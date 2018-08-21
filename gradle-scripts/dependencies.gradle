@@ -1,0 +1,59 @@
+ext {
+
+    supportLibrayVersion = '1.0.0-beta01'
+
+    supportDependencies = [
+            appcompat   : "androidx.appcompat:appcompat:${supportLibrayVersion}",
+            recyclerview: "androidx.recyclerview:recyclerview:${supportLibrayVersion}",
+            annotation  : "androidx.annotation:annotation:${supportLibrayVersion}",
+            material    : "com.google.android.material:material:${supportLibrayVersion}"
+    ]
+
+    lifecycleVersion = '2.0.0-beta01'
+
+    architecture = [
+            extensions: "androidx.lifecycle:lifecycle-extensions:${lifecycleVersion}",
+    ]
+
+    squareVersion = '2.3.0'
+    picassoVersion = '2.71828'
+
+    squareDependencies = [
+            retrofit       : "com.squareup.retrofit2:retrofit:${squareVersion}",
+            adapter_rx_java: "com.squareup.retrofit2:adapter-rxjava2:${squareVersion}",
+            converter_gson : "com.squareup.retrofit2:converter-gson:${squareVersion}",
+            picasso        : "com.squareup.picasso:picasso:${picassoVersion}"
+    ]
+
+    rxandroidVersion = '2.0.2'
+    rxjavaVersion = '2.1.9'
+
+    reactiveDependencies = [
+            rxandroid: "io.reactivex.rxjava2:rxandroid:${rxandroidVersion}",
+            rxjava   : "io.reactivex.rxjava2:rxjava:${rxjavaVersion}"
+    ]
+
+    junitVersion = '4.12'
+    mockitoVersion = '1.10.19'
+    robolectricVersion = '3.0'
+
+    testingDependencies = [
+            junit      : "junit:junit:${junitVersion}",
+            mockito    : "org.mockito:mockito-core:${mockitoVersion}",
+            robolectric: "org.robolectric:robolectric:${robolectricVersion}"
+    ]
+
+    gsonVersion = '2.8.2'
+    kotlinVersion = '1.2.50'
+    libphoneVersion = '8.5.2'
+    timberVersion = '4.6.0'
+    hawkVersion = '2.0.1'
+
+    others = [
+            gson    : "com.google.code.gson:gson:${gsonVersion}",
+            kotlin  : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${kotlinVersion}",
+            libphone: "com.googlecode.libphonenumber:libphonenumber:${libphoneVersion}",
+            timber  : "com.jakewharton.timber:timber:${timberVersion}",
+            hawk    : "com.orhanobut:hawk:${hawkVersion}"
+    ]
+}
