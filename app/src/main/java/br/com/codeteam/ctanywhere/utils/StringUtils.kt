@@ -9,7 +9,14 @@ object StringUtils {
      * Valida se a String está branca ou nula
      */
     fun isBlankOrNull(value: String?): Boolean {
-        return null == value || "" == value.trim()
+        return value.isNullOrBlank()
+    }
+
+    /**
+     * Valida se a lista é branca ou nula
+     */
+    fun isNullOrEmpty(list: List<Any>?): Boolean {
+        return list == null || list.isEmpty()
     }
 
     fun onlyNumber(value: String): String {
