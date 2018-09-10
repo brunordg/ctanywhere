@@ -1,4 +1,4 @@
-package br.com.codeteam.ctanywhere.utils
+package br.com.codeteam.ctanywhere.utilities
 
 /**
  * Classe para facilitar o uso de operações com String

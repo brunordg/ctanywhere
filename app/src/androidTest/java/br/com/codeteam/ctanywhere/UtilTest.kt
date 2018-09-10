@@ -2,7 +2,7 @@ package br.com.codeteam.ctanywhere
 
 import androidx.test.filters.SmallTest
 import androidx.test.runner.AndroidJUnit4
-import br.com.codeteam.ctanywhere.utils.StringUtils
+import br.com.codeteam.ctanywhere.utilities.StringUtils
 import org.junit.Assert
 import org.junit.Before
 import org.junit.Test

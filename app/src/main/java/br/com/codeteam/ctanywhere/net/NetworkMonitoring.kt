@@ -3,7 +3,7 @@ package br.com.codeteam.ctanywhere.net
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
-import br.com.codeteam.ctanywhere.utils.NetworkUtils
+import br.com.codeteam.ctanywhere.utilities.NetworkUtils
 
 class NetworkMonitoring : BroadcastReceiver() {
 

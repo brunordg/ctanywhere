@@ -40,6 +40,8 @@ dependencies {
     implementation architecture.extensions
     //RxJava
     implementation reactiveDependencies.rxjava
+    //Retrofit
+    implementation squareDependencies.retrofit
     //Others
     implementation others.libphone
     implementation others.timber

@@ -1,4 +1,4 @@
-package br.com.codeteam.ctanywhere.utils
+package br.com.codeteam.ctanywhere.utilities
 
 import android.Manifest
 import android.annotation.SuppressLint

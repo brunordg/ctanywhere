@@ -1,4 +1,4 @@
-package br.com.codeteam.ctanywhere.utils
+package br.com.codeteam.ctanywhere.utilities
 
 import com.google.gson.GsonBuilder
 

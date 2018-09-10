@@ -1,4 +1,4 @@
-package br.com.codeteam.ctanywhere.utils
+package br.com.codeteam.ctanywhere.utilities
 
 import android.content.Context
 import java.io.IOException

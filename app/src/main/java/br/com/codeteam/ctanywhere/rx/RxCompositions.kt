@@ -1,7 +1,7 @@
 package br.com.codeteam.ctanywhere.rx
 
 import android.util.Patterns
-import br.com.codeteam.ctanywhere.utils.StringUtils
+import br.com.codeteam.ctanywhere.utilities.StringUtils
 import io.reactivex.Observable
 import io.reactivex.ObservableTransformer
 import io.reactivex.Single
@@ -10,7 +10,7 @@ object RxCompositions {
 
     fun lengthGreaterThan(length: Int): ObservableTransformer<String, String> {
         return ObservableTransformer { observable ->
-            observable.flatMap {
+            observable.flatMap { it ->
                 Observable.just(it).map { it.trim() }
                         .filter { it.length > length }
                         .singleOrError()
@@ -28,7 +28,7 @@ object RxCompositions {
 
     fun lengthLessThan(length: Int): ObservableTransformer<String, String> {
         return ObservableTransformer { observable ->
-            observable.flatMap {
+            observable.flatMap { it ->
                 Observable.just(it).map { it.trim() }
                         .filter { it.length < length }
                         .singleOrError()

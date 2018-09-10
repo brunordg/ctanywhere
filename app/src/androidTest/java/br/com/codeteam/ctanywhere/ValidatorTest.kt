@@ -4,7 +4,7 @@ import android.os.Build
 import androidx.annotation.RequiresApi
 import androidx.test.filters.SmallTest
 import androidx.test.runner.AndroidJUnit4
-import br.com.codeteam.ctanywhere.utils.Converter
+import br.com.codeteam.ctanywhere.utilities.Converter
 import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
