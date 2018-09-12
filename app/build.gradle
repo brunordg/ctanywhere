@@ -38,6 +38,8 @@ dependencies {
     implementation supportDependencies.material
     //Architecture
     implementation architecture.extensions
+    implementation architecture.room
+    kapt architecture.roomCompiler
     //RxJava
     implementation reactiveDependencies.rxjava
     //Retrofit
