@@ -8,6 +8,7 @@ import com.google.i18n.phonenumbers.NumberParseException
 import com.google.i18n.phonenumbers.PhoneNumberUtil
 
 object Converter {
+    @JvmStatic
     fun toPhoneNumber(phone: String, ddd: String): String {
         var phoneAux = phone
 
@@ -38,6 +39,7 @@ object Converter {
         return phoneAux
     }
 
+    @JvmStatic
     fun <T> asList(vararg ts: T): List<T> {
         val result = ArrayList<T>()
 

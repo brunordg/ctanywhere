@@ -5,7 +5,7 @@ import java.io.IOException
 import java.nio.charset.Charset
 
 object FileUtils {
-
+    @JvmStatic
     @Throws(IOException::class)
     fun loadJSONFromAsset(context: Context, jsonFileName: String): String {
         (context.assets).open(jsonFileName).let {

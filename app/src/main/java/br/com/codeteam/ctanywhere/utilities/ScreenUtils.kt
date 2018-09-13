@@ -10,6 +10,7 @@ import androidx.vectordrawable.graphics.drawable.VectorDrawableCompat
 import br.com.codeteam.ctanywhere.context.ApplicationConstants
 
 object ScreenUtils {
+    @JvmStatic
     fun getScreenWidth(context: Context): Int {
         val windowManager = context.getSystemService(Context.WINDOW_SERVICE) as WindowManager
 
@@ -20,6 +21,7 @@ object ScreenUtils {
         }
     }
 
+    @JvmStatic
     fun getScreenHeight(context: Context): Int {
         val windowManager = context.getSystemService(Context.WINDOW_SERVICE) as WindowManager
         windowManager.let {
@@ -29,6 +31,7 @@ object ScreenUtils {
         }
     }
 
+    @JvmStatic
     fun getVectorForPreLollipop(resourceId: Int, activity: Context): Drawable? =
             if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
                 VectorDrawableCompat.create(activity.resources, resourceId, activity.theme)
@@ -36,6 +39,7 @@ object ScreenUtils {
                 activity.resources.getDrawable(resourceId, activity.theme)
             }
 
+    @JvmStatic
     fun setVectorForPreLollipop(textView: TextView, resourceId: Int, activity: Context, position: ApplicationConstants) {
         val icon = getVectorForPreLollipop(resourceId, activity)
 

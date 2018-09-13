@@ -20,6 +20,7 @@ object NetworkUtils {
      * Verifica a conexão, é possíve a navegação até o settings e também exibe uma mensagem
      */
     @Suppress("unused")
+    @JvmStatic
     fun isOnline(context: Context, message: Boolean, goSettings: Boolean): Boolean {
         if (isNetworkAvailable(context)) {
             return true
@@ -59,6 +60,7 @@ object NetworkUtils {
 
     @RequiresPermission(Manifest.permission.ACCESS_NETWORK_STATE)
     @Suppress("unused")
+    @JvmStatic
     fun isWifi(context: Context): Boolean {
         val connMgr = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         val networkInfo = connMgr.getNetworkInfo(ConnectivityManager.TYPE_WIFI)

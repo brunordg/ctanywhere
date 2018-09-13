@@ -8,6 +8,7 @@ object Json {
      * @param
      * @return String
      */
+    @JvmStatic
     fun toJson(value: Any): String {
         val gsonBuilder = GsonBuilder()
         gsonBuilder.setLenient()
@@ -21,6 +22,7 @@ object Json {
      * @param clazz objeto que vai ser convertideo a partir da String json
      * @return Retorna o objeto que representa o Json
      */
+    @JvmStatic
     fun <T> fromJson(json: String, clazz: Class<T>): T {
         return GsonBuilder().setLenient().create().fromJson(json, clazz)
     }
@@ -30,6 +32,7 @@ object Json {
      * @param value
      * @return String
      */
+    @JvmStatic
     fun toJsonPretty(value: Any): String {
         return GsonBuilder().setLenient().setPrettyPrinting().create().toJson(value)
     }

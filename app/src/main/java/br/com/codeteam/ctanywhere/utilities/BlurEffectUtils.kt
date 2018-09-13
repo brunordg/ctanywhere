@@ -23,7 +23,6 @@ class BlurEffectUtils(val context: Context, var radius: Int) {
         const val LOW_LIMIT = 1
     }
 
-
     fun transform(source: Bitmap): Bitmap {
         val blurredBitmap = Bitmap.createBitmap(source)
 

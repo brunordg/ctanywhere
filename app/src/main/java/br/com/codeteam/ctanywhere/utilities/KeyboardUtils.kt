@@ -10,6 +10,7 @@ import android.widget.EditText
  */
 object KeyboardUtils {
 
+    @JvmStatic
     fun showSoftInput(edit: EditText, context: Context) {
         edit.isFocusable = true
         edit.isFocusableInTouchMode = true
@@ -19,6 +20,7 @@ object KeyboardUtils {
         iml.showSoftInput(edit, 0)
     }
 
+    @JvmStatic
     fun toggleSoftInput(context: Context) {
         val iml = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
 
