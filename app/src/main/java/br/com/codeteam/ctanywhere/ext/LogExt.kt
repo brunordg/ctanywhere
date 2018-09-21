@@ -1,6 +1,7 @@
 package br.com.codeteam.ctanywhere.ext
 
 import android.util.Log
+import timber.log.Timber
 
 /**
  * Created by Bruno Rodrigues e Rodrigues on 17/05/2018.

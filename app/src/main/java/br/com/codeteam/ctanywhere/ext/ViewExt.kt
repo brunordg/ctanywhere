@@ -18,3 +18,4 @@ fun View.getParentActivity(): AppCompatActivity? {
 
     return null
 }
+
