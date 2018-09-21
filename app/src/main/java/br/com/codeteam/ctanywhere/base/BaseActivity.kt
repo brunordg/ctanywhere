@@ -1,61 +1,40 @@
 package br.com.codeteam.ctanywhere.base
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Color
-import android.graphics.Typeface
 import android.os.Build
-import android.os.Bundle
-import android.os.PersistableBundle
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.AppCompatDrawableManager
 import androidx.fragment.app.FragmentTransaction
 import br.com.codeteam.ctanywhere.view.snackbar.SnackCustom
 
-abstract class BaseActivity<P: BasePresenter<BaseView>> : AppCompatActivity(), BaseView {
-
-    lateinit var presenter: P
-
-    protected abstract fun instantiatePresenter(): P
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        this.instantiatePresenter()
-    }
+abstract class BaseActivity: AppCompatActivity() {
 
     /**
      * Exibi o SnackBar Custom
      */
-    override fun showSnackBar(@StringRes id: Int, type: SnackCustom.Type) {
+    @Suppress("unused")
+    fun showSnackBar(@StringRes id: Int, type: SnackCustom.Type) {
         SnackCustom(this).build(id, type).show()
     }
 
     /**
      * Exibi o SnackBar Custom
      */
-    override fun showSnackBar(message: String, type: SnackCustom.Type) {
+    @Suppress("unused")
+    fun showSnackBar(message: String, type: SnackCustom.Type) {
         SnackCustom(this).build(message, type).show()
     }
 
-    override fun TextView.setFont(fontPath: String) {
-        typeface = Typeface.createFromAsset(context.assets, fontPath)
-    }
-
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
-    override fun transparentStatusBar() {
+    @Suppress("unused")
+    fun transparentStatusBar() {
         window.statusBarColor = Color.TRANSPARENT
     }
 
-    @SuppressLint("RestrictedApi")
-    override fun ImageView.imageBackground(drawable: Int) {
-        setImageDrawable(AppCompatDrawableManager.get().getDrawable(context, drawable))
-    }
-
+    @Suppress("unused")
     fun label(): String {
         return resources.getString(packageManager.getActivityInfo(componentName, 0).labelRes)
     }
@@ -63,6 +42,7 @@ abstract class BaseActivity<P: BasePresenter<BaseView>> : AppCompatActivity(), B
     /**
      * <b>Example:</b> loadFragment { replace(R.id.frame_layout, Fragment1())}
      */
+    @Suppress("unused")
     fun loadFragment(loadToBackStack: Boolean = false, load: FragmentTransaction.() -> Any) {
         val fragmentTransaction = supportFragmentManager.beginTransaction()
         val nameFragment = fragmentTransaction.load()
@@ -83,6 +63,7 @@ abstract class BaseActivity<P: BasePresenter<BaseView>> : AppCompatActivity(), B
      *          show()
      *      }
      */
+    @Suppress("unused")
     fun showAlert(context: Context, title: String, message: String, dialogBuilder: AlertDialog.Builder.() -> Unit) {
         with(AlertDialog.Builder(context)) {
             setTitle(title)
@@ -91,6 +72,7 @@ abstract class BaseActivity<P: BasePresenter<BaseView>> : AppCompatActivity(), B
         }.dialogBuilder()
     }
 
+    @Suppress("unused")
     fun getStatusBarHeight(): Int {
         var result = 0
         val resourceId = resources.getIdentifier("status_bar_height", "dimen", "android")
